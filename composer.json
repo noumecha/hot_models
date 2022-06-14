@@ -1,0 +1,14 @@
+{
+    "name": "noumecha/hot_models",
+    "description": "simple module to create drupal site",
+    "require": {
+        "stephane888/formatage_models": "^3.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "noumecha",
+            "email": "noumechaivan@gmail.com"
+        }
+    ]
+}
