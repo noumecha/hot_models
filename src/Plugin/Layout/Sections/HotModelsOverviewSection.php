@@ -15,7 +15,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  category = @Translation("hot_models"),
  *  path = "layouts/sections",
  *  template = "hot_models_overview_section",
- *  library = "host_models/hot_models_overview_section",
+ *  library = "hot_models/hot_models_overview_section",
  *  default_region = "content",
  *  regions = {
  *      "subtitle_OS" = {
