@@ -4,7 +4,7 @@
             <div class="col-lg-5 service-description ">
                 {% if content.subtitle_OS %}
                     <div {{ attributes.subtitle_OS.addClass('head-title')}}>
-                        {{ content.subtitle_OS }}
+                        {{ content.subtitle_OS|layout_value }}
                     </div>
                 {% endif %}
                 {% if content.title_OS %}
@@ -14,19 +14,19 @@
                 {% endif %}
                 {% if content.text_OS %}
                     <div {{ attributes.text_OS.addClass('description')}}>
-                        {{ content.text_OS }}
+                        {{ content.text_OS|layout_value }}
                     </div>
                 {% endif %}
                 <div class="read-btn">
                     {% if content.button_OS %}
-                        {{ content.button_OS }}
+                        {{ content.button_OS|layout_value }}
                     {% endif %}
                 </div>
             </div>
             <div class="col-lg-7 services-elements "> 
                 <div class="row no-gutters d-flex">
                     {% if content.services_OS %}
-                        {{ content.services_OS }}
+                        {{ content.services_OS|layout_value }}
                     {% endif %}
                 </div>
             </div>
