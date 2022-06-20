@@ -83,8 +83,7 @@ class HotModelsHotlockSecurityInfo extends FormatageModelsSection
             'fields' => [
                 'security_bg' => [
                     'img_bg' => [
-                        'label' => 'Image bg',
-                        'fids' => []
+                        'label' => 'Image bg'
                     ]
                 ],
                 'security_icon' => [
