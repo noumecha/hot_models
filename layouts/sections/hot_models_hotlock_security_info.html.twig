@@ -1,29 +1,31 @@
 {% if content %}
 <section {{ attributes.addClass('security-info-handler')}}>
-    <div class="safety-text text-center">
-        {% if content.security_bg %}
-            {{ content.security_bg|layout_value }}
-        {% endif %}
-        {% if content.security_icon %}
-        <span {{region_attributes.security_icon.addClass('icon')}}>
-            {{ content.security_icon|layout_value }}
-        </span>
-        {% endif %}
-        {% if content.security_title %}
-        <div {{region_attributes.security_title.addClass('text-title')}}>
-            {{content.security_title|layout_value}}
+    <div class="">
+        <div class="safety-text text-center">
+            {% if content.security_bg %}
+                {{ content.security_bg|layout_value }}
+            {% endif %}
+            {% if content.security_icon %}
+            <span {{region_attributes.security_icon.addClass('icon')}}>
+                {{ content.security_icon|layout_value }}
+            </span>
+            {% endif %}
+            {% if content.security_title %}
+            <div {{region_attributes.security_title.addClass('text-title')}}>
+                {{content.security_title|layout_value}}
+            </div>
+            {% endif %}
+            {% if content.security_text %}
+            <div {{region_attributes.security_text.addClass('text-paragraph')}}>
+                {{content.security_text|layout_value}}
+            </div>
+            {% endif %}
+            {% if content.security_btn %}
+            <div {{region_attributes.security_btn.addClass('htl-btn htl-btn--bg')}}>
+                {{ content.security_btn|layout_value }}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-        {% if content.security_text %}
-        <div {{region_attributes.security_text.addClass('text-paragraph')}}>
-            {{content.security_text|layout_value}}
-        </div>
-        {% endif %}
-        {% if content.security_btn %}
-        <div {{region_attributes.security_btn.addClass('htl-btn htl-btn--bg')}}>
-            {{ content.security_btn|layout_value }}
-        </div>
-        {% endif %}
     </div>
 </section>
 {% endif %}
