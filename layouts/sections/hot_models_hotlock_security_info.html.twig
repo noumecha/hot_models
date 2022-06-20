@@ -2,13 +2,12 @@
 	{% if content.security_bg.layout_builder_add_block %}
 		{{ content.security_bg }}
 	{% endif %}
-	
 <section {{ attributes.addClass('security-info-handler')}}>
     <div class="">
         {% if content.security_bg|layout_bg_img %}
 		    {% set attributes2=content.security_bg|layout_bg_img %}
 	    {% endif %}
-        <div class="safety-text text-center"  {{ attributes2 }}>
+        <div {{ attributes2.addClass(['safety-text','text-center']) }} >
             {% if content.security_icon %}
             <span {{region_attributes.security_icon.addClass('icon')}}>
                 {{ content.security_icon|layout_value }}
