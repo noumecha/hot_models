@@ -1,33 +1,35 @@
-<section {{ attributes.addClass('services-overview-section-handler')}} >
-    <div class="row  no-gutters align-center justify-content-between">
-        <div class="col-lg-5 service-description ">
-            {% if content.subtitle_OS %}
-                <div {{ attributes.subtitle_OS.addClass('head-title')}}>
-                    {{ content.subtitle_OS }}
-                </div>
-            {% endif %}
-            {% if content.title_OS %}
-                <div {{ attributes.title_OS.addClass('subtitle')}}>
-                    {{ content.title_OS }}
-                </div>
-            {% endif %}
-            {% if content.text_OS %}
-                <div {{ attributes.text_OS.addClass('description')}}>
-                    {{ content.text_OS }}
-                </div>
-            {% endif %}
-            <div class="read-btn">
-                {% if content.button_OS %}
-                    {{ content.button_OS }}
+{% if content %}
+    <section {{ attributes.addClass('services-overview-section-handler')}} >
+        <div class="row  no-gutters align-center justify-content-between">
+            <div class="col-lg-5 service-description ">
+                {% if content.subtitle_OS %}
+                    <div {{ attributes.subtitle_OS.addClass('head-title')}}>
+                        {{ content.subtitle_OS }}
+                    </div>
                 {% endif %}
+                {% if content.title_OS %}
+                    <div {{ attributes.title_OS.addClass('subtitle')}}>
+                        {{ content.title_OS }}
+                    </div>
+                {% endif %}
+                {% if content.text_OS %}
+                    <div {{ attributes.text_OS.addClass('description')}}>
+                        {{ content.text_OS }}
+                    </div>
+                {% endif %}
+                <div class="read-btn">
+                    {% if content.button_OS %}
+                        {{ content.button_OS }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-7 services-elements "> 
+                <div class="row no-gutters d-flex">
+                    {% if content.services_OS %}
+                        {{ content.services_OS }}
+                    {% endif %}
+                </div>
             </div>
         </div>
-        <div class="col-lg-7 services-elements "> 
-            <div class="row no-gutters d-flex">
-                {% if content.services_OS %}
-                    {{ content.services_OS }}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+{% endif %}
