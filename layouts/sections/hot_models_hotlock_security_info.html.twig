@@ -1,0 +1,29 @@
+{% if content %}
+<section {{ attributes.addClass('security-info-handler')}}>
+    {% if content.security_bg %}
+        <div {{region_attributes.security_bg.addclass('img-bloc')}}>
+            {{ content.security_bg|layout_value }}
+        </div>
+    {% endif %}
+    <div class="safety-text text-center">
+        {% if content.security_icon %}
+        <span {{region_attributes.security_icon.addClass('icon')}}>
+            {{ content.security_icon|layout_value }}
+        </span>
+        {% endif %}
+        {% if content.security_title %}
+        <div {{region_attributes.security_title.addClass('text-title')}}>
+            {{content.security_title|layout_value}}
+        </div>
+        {% endif %}
+        {% if content.security_text %}
+        <div {{region_attributes.security_text.addClass('text-paragraph')}}>
+            {{content.security_text|layout_value}}
+        </div>
+        {% endif %}
+        {% if content.security_btn %}
+            {{ content.security_btn|layout_value }}
+        {% endif %}
+    </div>
+</section>
+{% endif %}
