@@ -1,6 +1,6 @@
 {% if content %}
 <section {{ attributes.addClass('security-info-handler')}}>
-    <div class="safety-text text-center">
+    < class="safety-text text-center">
         {% if content.security_bg %}
             {{ content.security_bg|layout_value }}
         {% endif %}
@@ -20,9 +20,7 @@
         </div>
         {% endif %}
         {% if content.security_btn %}
-        <div {{region_attributes.security_btn.addClass('htl-btn htl-btn--bg')}}>
             {{ content.security_btn|layout_value }}
-        </div>
         {% endif %}
     </div>
 </section>
