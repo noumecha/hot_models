@@ -1,0 +1,32 @@
+{% if content %}
+	<section {{ attributes.addClass('welcome-section-handler') }}>
+		<div class="container">
+			<div class="welcome-elements row">
+				<div class="col-md-5 text-element">
+					{% if content.sub_title %}
+						<h4 {{ region_attributes.sub_title.addClass(['title', 'section-title'])}}>
+							{{ content.sub_title|layout_value }}
+						</h4>
+					{% endif %}
+					{% if content.title %}
+						<h2 {{ region_attributes.title.addClass(['sub-title','welcome-words'])}}>
+							{{ content.title|layout_value }}
+						</h2>
+					{% endif %}
+					{% if content.call_to_action %}
+						<div {{ region_attributes.call_to_action.addClass(['call_to_action','htl-btn htl-btn--bg-inv'])}}>
+							{{ content.call_to_action|layout_value }}
+						</div>
+					{% endif %}
+				</div>
+				<div class="col-md-5 img-element">
+					{% if content.image_bg %}
+						<div {{region_attributes.image_bg.addclass('img-bloc')}}>
+							{{content.image_bg|layout_value}}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

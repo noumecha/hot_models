@@ -8,7 +8,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
  * Hot Models Overview Section
- * 
+ *
  * @Layout(
  *  id = "hot_models_overview_section",
  *  label = @Translation("hot_models_overview_section"),
@@ -35,95 +35,92 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *       }
  *  }
  * )
- * 
+ *
  */
-
-class HotModelsOverviewSection extends FormatageModelsSection
-{
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) 
-    {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition,$styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icons/sections/hot_models_overview_section.png");
-    }
-
-    /**
-     * 
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels:build()
-     * 
-     */
-    public function build(array $regions) 
-    {
-        
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        
-        return $build;
-    }
-
-    /**
-     * 
-     * {@inheritdoc}
-     * 
-     */
-    public function defaultConfiguration()
-    {
-        return parent::defaultConfiguration() + [
-            'css' => '',
-            'hmos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Contenu',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'subtitle_OS' => [
-                        'text_html' => [
-                            'label' => "Sous titre",
-                            'value' => "<p>Services overview</p>"
-                        ]
-                    ],
-                    'title_OS' => [
-                        'text_html' => [
-                            'label' => "Titre",
-                            'value' => "<p>
+class HotModelsOverviewSection extends FormatageModelsSection {
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot_models_overview_section.png");
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels:build()
+   *
+   */
+  public function build(array $regions) {
+    
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  public function defaultConfiguration() {
+    return parent::defaultConfiguration() + [
+      'css' => '',
+      'hmos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'subtitle_OS' => [
+            'text_html' => [
+              'label' => "Sous titre",
+              'value' => "<p>Services overview</p>"
+            ]
+          ],
+          'title_OS' => [
+            'text_html' => [
+              'label' => "Titre",
+              'value' => "<p>
                                             We offer <b>fast, professional and exceptional</b> services
                                         </p>"
-                        ]
-                    ],
-                    'text_OS' => [
-                        'text_html' => [
-                            'label' => "Paragraphe",
-                            'value' => "<p>
+            ]
+          ],
+          'text_OS' => [
+            'text_html' => [
+              'label' => "Paragraphe",
+              'value' => "<p>
                                             Our company is a full cycle guard and security firm that will deal with any type of locksmith and security tasks. We offer a full range of the solutions, from handling door locks to advanced monitoring and controlling your facility’s perimeter. 
                                         </p>"
-                        ]
-                    ],
-                    'button_OS' => [
-                        'url' => [
-                            'label' => "Button",
-                            'value' => [
-                                'link' => "#",
-                                'text' => "READ MORE",
-                                'class' => "link"
-                            ]
-                        ]
-                    ],
-                    'services_OS' => [
-                        'text_html' => [
-                            'label' => 'Services Content',
-                            'value' => ""
-                        ]
-                    ]
-                ]
             ]
-        ];
-    }
+          ],
+          'button_OS' => [
+            'url' => [
+              'label' => "Button",
+              'value' => [
+                'link' => "#",
+                'text' => "READ MORE",
+                'class' => "link"
+              ]
+            ]
+          ],
+          'services_OS' => [
+            'text_html' => [
+              'label' => 'Services Content',
+              'value' => ""
+            ]
+          ]
+        ]
+      ]
+    ];
+  }
+  
 }

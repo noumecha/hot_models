@@ -1,0 +1,30 @@
+{% if content %}
+	<section {{ attributes.addClass('hotlock-hero') }}>
+		{% if content.image_bg %}
+			<div {{region_attributes.image_bg.addclass('img-bloc')}}>
+				{{content.image_bg|layout_value}}
+			</div>
+		{% endif %}
+		<div class="hth-content ">
+			<div class="container d-flex justify-content-end {{settings.css_descp}}">
+				<div class="description">
+					{% if content.sub_title %}
+						<h4 {{ region_attributes.sub_title.addClass('title')}}>
+							{{ content.sub_title|layout_value }}
+						</h4>
+					{% endif %}
+					{% if content.title %}
+						<h1 {{ region_attributes.title.addClass('sub-title')}}>
+							{{ content.title|layout_value }}
+						</h1>
+					{% endif %}
+					{% if content.call_to_action %}
+						<div {{ region_attributes.call_to_action.addClass('call_to_action')}}>
+							{{ content.call_to_action|layout_value }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

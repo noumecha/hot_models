@@ -1,0 +1,46 @@
+{% if content %}
+	<section {{ attributes.addClass('safety-handler') }}>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 security-service">
+					{% if content.icon %}
+						<div {{region_attributes.icon.addClass('icon')}}>
+							{{content.icon}}
+						</div>
+					{% endif %}
+					<div class="handler">
+						<div class="to-end">
+							{% if content.title %}
+								<h3 {{region_attributes.title.addClass(['head-title','title'])}}>
+									{{content.title}}
+								</h3>
+							{% endif %}
+							{% if content.description %}
+								<div {{region_attributes.description.addClass(['all-services','description'])}}>
+									{{content.description}}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 call-info">
+					{% if content.title2 %}
+						<h3 {{region_attributes.title2.addClass(['head-title','title2'])}}>
+							{{content.title2}}
+						</h3>
+					{% endif %}
+					{% if content.phone %}
+						<div {{region_attributes.phone.addClass(['phone-number','phone'])}}>
+							{{content.phone}}
+						</div>
+					{% endif %}
+					{% if content.icon2 %}
+						<div {{region_attributes.icon2.addClass('icon')}}>
+							{{content.icon2}}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

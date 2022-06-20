@@ -1,0 +1,40 @@
+{% if content %}
+	<div {{attributes.addClass('single-service-items')}}>
+		{% if content.image_bg.layout_builder_add_block %}
+			{{ content.image_bg }}
+		{% else %}
+			{% set keySearch = {begin:1, number:1} %}
+			<div {{region_attributes.image_bg.addClass('item-image')}}>
+				<div class="icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				{{ content.image_bg|layout_value_img(keySearch) }}
+			</div>
+		{% endif %}
+		<div class="info-items">
+			{% if content.title %}
+				<h3 {{ region_attributes.title.addClass(['title','item-title'])}}>
+					{{ content.title|layout_value }}
+				</h3>
+			{% endif %}
+			{% if content.description %}
+				<div {{ region_attributes.description.addClass(['description','descriptor-item'])}}>
+					{% set content_desc %}
+					{{ content.description|layout_value }}
+					{% endset %}
+					{% set content_desc2 %}
+					{{content_desc|trim|striptags }}
+					{% endset %}
+					{{ (content_desc2|length > 150 ? content_desc2|slice(0, 150) ~ '…' : content_desc2)  }}
+				</div>
+			{% endif %}
+			{% if content.call_to_action %}
+				<div {{ region_attributes.call_to_action.addClass('call_to_action')}}>
+					{{ content.call_to_action }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}

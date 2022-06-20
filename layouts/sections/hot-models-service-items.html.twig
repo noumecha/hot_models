@@ -1,0 +1,16 @@
+{% if content %}
+	<section {{ attributes.addClass(['hotlock-service-items','no-gutters','row']) }}>
+		{% if content.description.layout_builder_add_block %}
+			{{ content.description }}
+		{% else %}
+			{% set lists = content.description|layout_value %}
+			{% for key,value in lists[0] %}
+				<div {{ region_attributes.description.addClass('description') }}>
+					<div class="element">
+						{{ value }}
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</section>
+{% endif %}
