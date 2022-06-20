@@ -114,9 +114,9 @@ class HotModelsHotlockSecurityInfo extends FormatageModelsSection
                     'url' => [
                         'label' => "Url",
                         'value' => [
-                            'link' => '#',
-                            'text' => 'Learn more',
-                            'class' => 'htl-btn htl-btn--bg'
+                            'link' => "#",
+                            'text' => "Learn more",
+                            'class' => "htl-btn htl-btn--bg"
                         ]
                     ]
                 ]
