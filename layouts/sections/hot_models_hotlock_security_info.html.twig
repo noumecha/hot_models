@@ -20,7 +20,9 @@
         </div>
         {% endif %}
         {% if content.security_btn %}
+        <div {{region_attributes.security_btn.addClass('htl-btn htl-btn--bg')}}>
             {{ content.security_btn|layout_value }}
+        </div>
         {% endif %}
     </div>
 </section>

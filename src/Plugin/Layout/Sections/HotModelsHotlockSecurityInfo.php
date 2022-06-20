@@ -112,7 +112,7 @@ class HotModelsHotlockSecurityInfo extends FormatageModelsSection
                 ],
                 'security_btn' => [
                     'url' => [
-                        'label' => "Url",
+                        'label' => "Button",
                         'value' => [
                             'link' => "#",
                             'text' => "Learn more",
