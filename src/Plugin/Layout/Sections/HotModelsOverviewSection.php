@@ -108,7 +108,7 @@ class HotModelsOverviewSection extends FormatageModelsSection {
               'value' => [
                 'link' => "#",
                 'text' => "READ MORE",
-                'class' => "link"
+                'class' => "htl-btn htl-btn--big htl-btn--fade"
               ]
             ]
           ],

@@ -17,11 +17,11 @@
                         {{ content.text_OS|layout_value }}
                     </div>
                 {% endif %}
-                <div class="read-btn">
-                    {% if content.button_OS %}
+                {% if content.button_OS %}
+                    <div {{ region_attributes.button_OS.addClass('htl-btn htl-btn--sm htl-btn--bg-inv')}} >
                         {{ content.button_OS|layout_value }}
-                    {% endif %}
-                </div>
+                    </div>
+                {% endif %}
             </div>
             <div class="col-lg-7 services-elements "> 
                 <div class="row no-gutters d-flex">
