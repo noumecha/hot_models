@@ -1,11 +1,9 @@
 {% if content %}
 <section {{ attributes.addClass('security-info-handler')}}>
-    {% if content.security_bg %}
-        <div>
-            {{ content.security_bg|layout_value }}
-        </div>
-    {% endif %}
     <div class="safety-text text-center">
+        {% if content.security_bg %}
+            {{ content.security_bg|layout_value }}
+        {% endif %}
         {% if content.security_icon %}
         <span {{region_attributes.security_icon.addClass('icon')}}>
             {{ content.security_icon|layout_value }}
