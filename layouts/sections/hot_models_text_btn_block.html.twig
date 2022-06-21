@@ -1,0 +1,24 @@
+{% if content %}
+    {% if content.btn_block_bg.layout_builder_add_block %}
+		{{ content.btn_block_bg }}
+	{% endif %}
+<div class="container-fluid p-0">
+    <div {{ attributes.addClass(['row','text-btn-bloc']) }}>
+        {% if content.btn_block_bg|layout_bg_img %}
+		    {% set attributes2=content.btn_block_bg|layout_bg_img %}
+	    {% endif %}
+        {% if content.btn_block_text %}
+        <div {{ region_attributes.btn_block_text.addClass(['title-wrapper','col-md-8','col-lg-6']) }}>
+            {{ content.btn_block_text }}
+        </div>
+        {% endif %}
+        <div class="btn-handler col-md-10 col-lg-6">
+            {% if content.btn_block_boutton %}
+            <div {{ region_attributes.btn_block_boutton.addClass(['htl-btn','htl-btn--big','htl-btn--bg']) }}>
+                {{ content.btn_block_boutton|layout_value }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}

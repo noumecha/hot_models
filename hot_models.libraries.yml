@@ -49,6 +49,12 @@ hot_models_team_section:
   css:
     theme:
       layouts/css/hot_models_team_section.css: {}
+hot_models_text_btn_block:
+  js:
+    layouts/js/hot_models_text_btn_block.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_text_btn_block.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:
