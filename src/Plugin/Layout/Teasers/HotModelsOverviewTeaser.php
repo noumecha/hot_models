@@ -14,7 +14,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *  label = @Translation("hot_models_overview_teaser"),
  *  category = @Translation("hot_models"),
  *  path = "layouts/teasers",
- *  template = "hhot_models_overview_teaser",
+ *  template = "hot_models_overview_teaser",
  *  library = "hot_models/hot_models_overview_teaser",
  *  regions = {
  *      "o_teaser_icon" = {
