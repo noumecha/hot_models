@@ -61,6 +61,12 @@ hot_models_lock_smithing:
   css:
     theme:
       layouts/css/hot_models_lock_smithing.css: {}
+hot_models_hotlock_testimony:
+  js:
+    layouts/js/hot_models_hotlock_testimony.js: {}
+  css:
+    theme:
+      layoouts/css/hot_models_hotlock_testimony.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:
@@ -74,3 +80,15 @@ hot_models_team_teaser:
   css:
     theme:
       layouts/css/hot_models_team_teaser.css: {}
+hot_models_testimony_teaser_count:
+  js:
+    layouts/js/hot_models_testimony_teaser_count.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_testimony_teaser_count.css: {}
+hot_models_testimony_teaser_text:
+  js:
+    layouts/js/hot_models_testimony_teaser_text.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_testimony_teaser_text.css: {}

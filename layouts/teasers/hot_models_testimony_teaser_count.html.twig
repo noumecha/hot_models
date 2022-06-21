@@ -1,0 +1,17 @@
+{% if content %}
+<div {{ attributes.addClass(['services','col-sm-4']) }}>
+    {% if content.teaser_count_icon %}
+    <div {{ region_attributes.teaser_count_icon.addClass('icon') }}>
+        {{ content.teaser_count_icon|layout_value }}
+    </div>
+    {% endif %}
+    {% if content.teaser_count_number %}
+        {{ content.teaser_count_icon|layout_value }}
+    {% endif %}
+    {% if content.teaser_count_title %}
+    <div {{ region_attributes.teaser_count_title.addClass('title')}}>
+        {{ content.teaser_count_title|layout_value }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}

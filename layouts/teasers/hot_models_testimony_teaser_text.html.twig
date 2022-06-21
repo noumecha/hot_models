@@ -1,0 +1,21 @@
+{% if content %}
+<div {{ attributes.addClass('single-slide') }}>
+    {% if content.teaser_text_title %}
+    <div {{ region_attributes.teaser_text_title.addClass('speech') }}>
+        {{ content.teaser_text_title|layout_value }}
+    </div>
+    {% endif %}
+    <div class="info">
+        {% if content.teaser_text_author %}
+        <div {{ region_attributes.teaser_text_author.addClass('author') }}>
+            {{ content.teaser_text_author|layout_value }}
+        </div>
+        {% endif %}
+        {% if content.teaser_text_company %}
+        <div {{ region_attributes.teaser_text_company.addClass('company-name') }}>
+            {{ content.teaser_text_company|layout_value }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
