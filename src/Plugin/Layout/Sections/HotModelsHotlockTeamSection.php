@@ -9,6 +9,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 /**
  * 
  * Team Section Layout 
+ * 
  * @Layout(
  *  id = "hot_models_team_section",
  *  label = @Translation("hot_models_team_section"),
@@ -18,10 +19,18 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  library = "hot_models/hot_models_team_section,
  *  default_region = "content",
  *  regions = {
+ *      "team_section_title" = {
+ *          "label" = @Translation("team_section_title"),
+ *       },
+ *       "team_section_content" = {
+ *          "label" = @Translation("team_section_content"),
+ *       },
+ *       "team_section_btn" = {
+ *          "label" = @Translation("team_section_btn"),
+ *       }
  *  }
  * )
  */
-
 class HotModelsHotlockTeamSection extends FormatageModelsSection 
 {
 
