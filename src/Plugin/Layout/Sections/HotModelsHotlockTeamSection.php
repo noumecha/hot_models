@@ -18,9 +18,6 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  library = "hot_models/hot_models_team_section,
  *  default_region = "team_section_title",
  *  regions = {
- *      "team_section_title" = {
- *          "label" = @Translationr"team_section_title"),
- *       }
  *  }
  * )
  */
