@@ -19,14 +19,14 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  default_region = "team_section_title",
  *  regions = {
  *      "team_section_title" = {
- *          "label" = @Translation("team_section_title"),     
- *      },
- *      "team_section_content" = {
- *          "label" = @Translation("team_section_content"),     
- *      },
- *      "team_section_btn" = {
- *          "label" = @Translation("team_section_btn"),          
- *      }
+ *          "label" = @Translation("team_section_title"),
+ *       },
+ *       "team_section_content" = {
+ *          "label" = @Translation("team_section_content"),
+ *       },
+ *       "team_section_btn" = {
+ *          "label" = @Translation("team_section_btn"),
+ *       }
  *  }
  * )
  */
