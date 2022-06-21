@@ -55,6 +55,12 @@ hot_models_text_btn_block:
   css:
     theme:
       layouts/css/hot_models_text_btn_block.css: {}
+hot_models_lock_smithing:
+  js:
+    layouts/js/hot_models_lock_smithing.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_lock_smithing.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:

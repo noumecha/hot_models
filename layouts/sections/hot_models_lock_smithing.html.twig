@@ -1,0 +1,43 @@
+{% if content %}
+<section {{ attributes.addClass('lock-smithing-service-handler')}}>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 ">
+                {% if content.lock_image %}
+                <div {{ region_attributes.lock_image.addClass('img-handler ') }}>
+                    {{ content.lock_image|layout_value }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 lock-info-section">
+                {% if content.lock_subtitle %}
+                <div {{ region_attributes.lock_subtitle.addClass('title') }}>
+                    {{ content.lock_subtitle|layout_value }}
+                </div>
+                {% endif %}
+                {% if content.lock_title %}
+                <div {{ region_attributes.lock_title.addClass('description')}}>
+                    {{ content.lock_title|layout_value }}
+                </div>
+                {% endif %}
+                <div class=" lists ">
+                    <div class="col-sm-6  all-services d-block">
+                        {% if content.lock_list_one %}
+                        <ul {{ region_attributes.lock_list_one.addClass('list-services')}}>
+                            {{ content.lock_list_one|layout_value }}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6 all-services">
+                        {% if content.lock_list_two %}
+                        <ul {{ region_attributes.lock_list_two.addClass('list-services')}}>
+                            {{ content.lock_list_two|layout_value }}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
