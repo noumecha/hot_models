@@ -1,0 +1,26 @@
+{% if content %}
+<div {{attributes.addClass(['single-lutin','col-md-4','col-sm-6','col-lg-3'])}} > 
+    <div class="lutin-img">
+        {% if content.team_image %}
+            {{ content.team_image|layout_value }}
+        {% endif %}
+        <div class="social-network">
+            {% if content.team_icon %}
+            <div {{ region_attributes.team_icon.addClass('d-flex')}}>
+                {{ content.team_icon|layout_value }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if content.team_name %}
+    <div {{ region_attributes.team_name.addClass('lutin-name')}}>
+        {{ content.team_name|layout_value }}
+    </div>
+    {% endif %}
+    {% if content.team_service %}
+    <div {{ region_attributes.team_service.addClass('lutin-poste')}}>
+        {{ content.team_service|layout_value }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}

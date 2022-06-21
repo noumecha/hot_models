@@ -43,6 +43,12 @@ hot_models_overview_section:
   css:
     theme:
       layouts/css/hot_models_overview_section.css: {}
+hot_models_team_section:
+  js:
+    layouts/js/hot_models_team_section.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_team_section.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:
@@ -50,3 +56,9 @@ hot_models_overview_teaser:
   css:
     theme:
       layouts/css/hot_models_overview_teaser.css: {}
+hot_models_team_teaser:
+  js:
+    layouts/js/hot_models_team_teaser.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_team_teaser.css: {}

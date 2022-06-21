@@ -1,0 +1,23 @@
+{% if content %}
+<section {{ attributes.addClass('team-section-handler')}}>
+    <div class="container">
+        {% if content.team_section_title %}
+        <div {{ region_attributes.team_section_title.addClass(['title','text-center']) }}>
+            {{ content.team_section_title|layout_value }}
+        </div>
+        {% endif %}
+        {% if content.team_section_content %}
+        <div {{ region_attributes.team_section_content.addClass(['all-team-lutin','row','justify-content-between']) }}>
+            {{ content.team_section_content|layout_value }}
+        </div>
+        {% endif %}
+        <div class="d-flex justify-content-center">
+            {% if content.team_section_btn %}
+            <div {{ region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])}}>
+                {{ content.team_section_btn|layout_value }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endif %}
