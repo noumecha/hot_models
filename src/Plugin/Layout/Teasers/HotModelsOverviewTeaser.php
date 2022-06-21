@@ -65,7 +65,7 @@ class HotModelsOverviewTeaser extends FormatageModelsTeasers
    * 
    */
   public function defaultConfiguration() {
-    return defaultConfiguration() + [
+    return parent::defaultConfiguration() + [
         'css' => '',
         'hovt' => [
             'builder-form'  => true,
