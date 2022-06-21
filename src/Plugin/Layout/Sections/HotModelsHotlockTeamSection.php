@@ -16,7 +16,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  category = @Translation("hot_models"),
  *  path = "layouts/sections",
  *  template = "hot_models_team_section",
- *  library = "hot_models/hot_models_team_section
+ *  library = "hot_models/hot_models_team_section",
  *  default_region = "team_section_title",
  *  regions = {
  *      "team_section_title" = {
