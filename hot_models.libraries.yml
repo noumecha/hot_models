@@ -66,7 +66,13 @@ hot_models_hotlock_testimony:
     layouts/js/hot_models_hotlock_testimony.js: {}
   css:
     theme:
-      layoouts/css/hot_models_hotlock_testimony.css: {}
+      layouts/css/hot_models_hotlock_testimony.css: {}
+hot_models_hotlock_footer:
+  js:
+    layouts/css/hot_models_hotlock_footer.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_hotlock_footer.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:
