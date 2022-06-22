@@ -91,7 +91,19 @@ class HotModelsHotlockTestimony extends FormatageModelsSection
                 'testimony_text_contener' => [
                     'text_html' => [
                         'label' => 'Textes',
-                        'value' => ''
+                        'value' => '<div class="single-slide">
+                                        <div class="speech">
+                                            Thanks for the quick and professional services! I was happy to know about safety.
+                                        </div>
+                                        <div class="info">
+                                            <div class="author">
+                                                Romeo Sanchez
+                                            </div>
+                                            <div class="company-name">
+                                                Hotels Group
+                                            </div>
+                                        </div>
+                                    </div>'
                     ]
                 ]
             ]
