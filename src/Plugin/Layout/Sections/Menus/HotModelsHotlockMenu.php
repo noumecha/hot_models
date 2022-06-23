@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\hot_models\Plugin\Layout\Sections;
+namespace Drupal\hot_models\Plugin\Layout\Sections\Menus;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
