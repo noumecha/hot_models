@@ -59,6 +59,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     FormatageModelsThemes::formatSettingValues($build);
     if (is_array($build['menu_list']))
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
+    dump($build);
     return $build;
   }
   
