@@ -2,9 +2,9 @@
 <header {{ attributes.addClass('header-section-handler')}}>
   <nav class="navbar navbar-expand-lg header-nav navbar-light ">
     {% if content.menu_logo %}
-    <a {{ region_attributes.menu_logo.addClass('navbar-brand')}} href="#">
+    <div {{ region_attributes.menu_logo.addClass('navbar-brand')}} href="#">
       {{ content.menu_logo|layout_value }}
-    </a>
+    </div>
     {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
