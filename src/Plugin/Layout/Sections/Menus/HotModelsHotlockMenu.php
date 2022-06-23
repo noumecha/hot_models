@@ -96,8 +96,8 @@ class HotModelsHotlockMenu extends FormatageModelsSection
                     'label' => 'Button',
                     'value' => [
                       'link' => '#',
-                      'text' => '',
-                      'value' => 'APPOINTEMENT'
+                      'text' => 'APPOINTEMENT',
+                      'class' => 'htl-btn htl-btn--big htl-btn--fade'
                     ]
                   ]
                 ]
