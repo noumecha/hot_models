@@ -57,6 +57,10 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
+    // classes and attributes.
+    if (!isset($build['settings']['bloc_style'])) {
+      $build['settings']['bloc_style']['#default_value'] = ['bg-white'];
+    }
     if (is_array($build['menu_list']))
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
     dump($build);
