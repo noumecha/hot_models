@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg header-nav navbar-light ">
     {% if content.menu_logo %}
     <div {{ region_attributes.menu_logo.addClass('navbar-brand')}} href="#">
-      {{ content.menu_logo|layout_value }}
+      {{ content.menu_logo }}
     </div>
     {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -13,13 +13,13 @@
     <div class="collapse navbar-collapse nav-links" id="navbarSupportedContent">
       {% if content.menu_list %}
         <ul {{ region_attributes.menu_list.addClass(['navbar-nav','ml-auto'])}}>
-          {{ content.menu_list|layout_value }}
+          {{ content.menu_list }}
         </ul>
       {% endif %}
 
       {% if content.menu_button %}
       <div {{ region_attributes.menu_button.addClass(['htl-btn','htl-btn--bg'])}}>
-        {{ content.menu_button|layout_value }}
+        {{ content.menu_button }}
       </div>
       {% endif %}
     </div>
