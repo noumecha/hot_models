@@ -73,11 +73,17 @@ class HotModelsHotlockMenu extends FormatageModelsSection
                                
                 $hot_nav[$k]['#attributes'] = [
                     'class' => [
-                        'navbar-nav','ml-auto','sn-bloc','first-nav'
+                        'navbar-nav','ml-auto','first-nav'
                     ]
                 ];
                 // set a new theme hoock () : refers to .theme.inc file
                 $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
+                // add class
+                $hot_nav[$k]['content']['#attributes'] = [
+                  'class' => [
+                    'nav-list'
+                  ]
+                ];
                 //
                 $this->formatListMenus($hot_nav[$k]['content']['#items']);
             }
