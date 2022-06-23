@@ -59,6 +59,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     FormatageModelsThemes::formatSettingValues($build);
     if (is_array($build['menu_list']))
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
+      $build['bloc_style']["#default_value"] = $this->configuration['bloc_style'];
     dump($build);
     return $build;
   }
@@ -77,8 +78,6 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
             'first-nav'
           ]
         ];
-        // set a block style value 
-        $build['bloc_style'] = "bg-white";
         // set a new theme hoock () : refers to .theme.inc file
         $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
         //
