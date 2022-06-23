@@ -74,7 +74,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection
                                
                 $hot_nav[$k]['#attributes'] = [
                     'class' => [
-                        'sn-bloc'
+                        'navbar-nav','ml-auto'
                     ]
                 ];
                 // set a new theme hoock () : refers to .theme.inc file
