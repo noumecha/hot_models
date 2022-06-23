@@ -18,7 +18,7 @@ function hot_models_theme() {
     'preprocess functions' => [
       'template_preprocess_layoutmenu_hot_models_hotlock_menu'
     ],
-    'file' => 'fast_models.theme.inc'
+    'file' => 'hot_models.theme.inc'
   ];  
   return $hooks;
 }
