@@ -77,6 +77,8 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
             'first-nav'
           ]
         ];
+        // set a block style value 
+        $build['bloc_style'] = "bg-white";
         // set a new theme hoock () : refers to .theme.inc file
         $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
         //
