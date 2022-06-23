@@ -4,12 +4,13 @@ namespace Drupal\hot_models\Plugin\Layout\Sections\Menus;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
- * 
- * hot models hotlock menu 
- * 
+ *
+ * hot models hotlock menu
+ *
  * @Layout(
  *  id = "hot_models_hotlock_menu",
  *  label = @Translation("hot_models_hotlock_menu"),
@@ -20,23 +21,21 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  default_region = "menu_logo",
  *  regions = {
  *      "menu_logo" = {
- *          "label" = @Translation("menu_logo"),   
+ *          "label" = @Translation("menu_logo"),
  *      },
  *      "menu_list" = {
- *          "label" = @Translation("menu_list"),  
+ *          "label" = @Translation("menu_list"),
  *      },
  *      "menu_button" = {
  *          "label" = @Translation("menu_button"),
  *      }
  *  }
  * )
- * 
+ *
  */
-
-class HotModelsHotlockMenu extends FormatageModelsSection
-{
-
-   /**
+class HotModelsHotlockMenu extends FormatageModelsSection {
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
@@ -59,78 +58,92 @@ class HotModelsHotlockMenu extends FormatageModelsSection
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
     if (is_array($build['menu_list']))
-      $build['menu_list'] = $this->getMenus($build['menu_list']);
+      $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
     return $build;
   }
-
+  
   /**
-     * 
-     * {@inheritdoc}
-     */
-    private function getMenus(array $hot_nav) {
-        foreach ($hot_nav as $k => $m) {
-            if (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] === 'system_menu_block') {
-                               
-                $hot_nav[$k]['#attributes'] = [
-                    'class' => [
-                        'navbar-nav','ml-auto','first-nav'
-                    ]
-                ];
-                // set a new theme hoock () : refers to .theme.inc file
-                $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
-                //
-                $this->formatListMenus($hot_nav[$k]['content']['#items']);
-            }
-        }
-        return $hot_nav;
-    }
-
-    /**
-     * 
-     * {@inheritdoc}
-     */
-
-    private function formatListMenus(array &$items) {
-        foreach ($items as $k => $item) {
-            if (!empty($item['attributes'])) {
-                $attribute = $item['attributes'];
-                $attribute->addClass('nav-item');
-                if (!empty($item['below'])) {
-                $this->formatListMenus($item['below']);
-                $items[$k]['below'] = $item['below'];
-                }
-            }
-        }
-    }
-
-
-  /**
-   * 
+   *
    * {@inheritdoc}
-   * 
    */
-  public function defaultConfiguration()
-  {
+  private function getMenus(array $hot_nav, array $build) {
+    foreach ($hot_nav as $k => $m) {
+      if (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] === 'system_menu_block') {
+        $hot_nav[$k]['#attributes'] = [
+          'class' => [
+            'navbar-nav',
+            'ml-auto',
+            'first-nav'
+          ]
+        ];
+        // set a new theme hoock () : refers to .theme.inc file
+        $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
+        //
+        $this->formatListMenus($hot_nav[$k]['content']['#items']);
+      }
+    }
+    return $hot_nav;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  private function formatListMenus(array &$items) {
+    foreach ($items as $k => $item) {
+      if (!empty($item['attributes'])) {
+        $attribute = $item['attributes'];
+        $attribute->addClass('nav-item');
+        if (!empty($item['below'])) {
+          $this->formatListMenus($item['below']);
+          $items[$k]['below'] = $item['below'];
+        }
+      }
+    }
+  }
+  
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['bloc_style'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t(' Bloc style '),
+      '#default_value' => $this->configuration['bloc_style']
+    ];
+    return $form;
+  }
+  
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->configuration['bloc_style'] = $form_state->getValue('bloc_style');
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
-        'css' => '',
-        'hmhm' => [
-            'builder-form' => true,
-            'info' => [
-                'title' => 'Contenu',
-                'loader' => 'static'
-            ],
-            'fields' => [
-                'menu_logo' => [
-                    'text_html' => [
-                        'label' => 'Logo Image',
-                        'value' => '<img src="https://hotlock.axiomthemes.com/wp-content/uploads/2017/10/retina-logo-2.png" height="43px" alt=""
+      'css' => '',
+      'bloc_style' => '',
+      'hmhm' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'menu_logo' => [
+            'text_html' => [
+              'label' => 'Logo Image',
+              'value' => '<img src="https://hotlock.axiomthemes.com/wp-content/uploads/2017/10/retina-logo-2.png" height="43px" alt=""
                                     srcset="">'
-                    ]
-                ],
-                'menu_list' => [
-                  'text_html' => [
-                      'label' => 'Menu list item',
-                      'value' => '<li class="nav-item active nav-link">
+            ]
+          ],
+          'menu_list' => [
+            'text_html' => [
+              'label' => 'Menu list item',
+              'value' => '<li class="nav-item active nav-link">
                                     <a href="#" class=" colored" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                       id="navbarDropdown">Home <span class="sr-only">(current)</span></a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -195,21 +208,21 @@ class HotModelsHotlockMenu extends FormatageModelsSection
                                       </div>
                                     </span>
                                   </li>'
-                  ]
-                ],
-                'menu_button' => [
-                  'url' => [
-                    'label' => 'Button',
-                    'value' => [
-                      'link' => '#',
-                      'text' => 'APPOINTEMENT',
-                      'class' => 'htl-btn htl-btn--big htl-btn--fade'
-                    ]
-                  ]
-                ]
             ]
+          ],
+          'menu_button' => [
+            'url' => [
+              'label' => 'Button',
+              'value' => [
+                'link' => '#',
+                'text' => 'APPOINTEMENT',
+                'class' => 'htl-btn htl-btn--big htl-btn--fade'
+              ]
+            ]
+          ]
         ]
+      ]
     ];
   }
-
+  
 }
