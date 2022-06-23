@@ -87,7 +87,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection
                 ],
                 'menu_list' => [
                   'text_html' => [
-                      'label' => '',
+                      'label' => 'Menu list item',
                       'value' => ''
                   ]
                 ],
