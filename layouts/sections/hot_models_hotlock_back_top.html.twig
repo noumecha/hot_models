@@ -1,0 +1,9 @@
+{% if content %}
+<div {{ attributes.addClass('hotlock-bac-top')}}>
+    {% if content.back_top_icon %}
+    <div {{ region_attributes.back_top_icon.addClass('btn-bac-top')}}>
+        {{ content.back_top_icon|layout_value }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
