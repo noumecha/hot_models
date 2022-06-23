@@ -59,7 +59,6 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     FormatageModelsThemes::formatSettingValues($build);
     if (is_array($build['menu_list']))
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
-      $build['bloc_style']["#default_value"] = $this->configuration['bloc_style'];
     dump($build);
     return $build;
   }
@@ -127,7 +126,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
   public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
       'css' => '',
-      'bloc_style' => '',
+      'bloc_style' => 'bg-white',
       'hmhm' => [
         'builder-form' => true,
         'info' => [
