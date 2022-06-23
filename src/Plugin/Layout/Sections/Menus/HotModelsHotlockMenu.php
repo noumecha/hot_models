@@ -44,7 +44,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection
   public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
     // TODO Auto-generated method stub
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-    $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot_models_hotlock_back_top.png");
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot_models_hotlock_menu.png");
   }
   
   /**
