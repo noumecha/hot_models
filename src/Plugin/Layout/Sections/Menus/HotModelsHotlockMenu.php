@@ -25,7 +25,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *      "menu_list" = {
  *          "label" = @Translation("menu_list"),  
  *      },
- *      "menu_butoon" = {
+ *      "menu_button" = {
  *          "label" = @Translation("menu_button"),
  *      }
  *  }

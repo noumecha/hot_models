@@ -12,7 +12,7 @@
     </button>
     <div class="collapse navbar-collapse nav-links" id="navbarSupportedContent">
       {% if content.menu_list %}
-        <ul {{ region_attributes.menu_list.addClass(['navbar-nav','ml-auto','fnews-header'])}}>
+        <ul {{ region_attributes.menu_list.addClass(['navbar-nav','ml-auto'])}}>
           {{ content.menu_list|layout_value }}
         </ul>
       {% endif %}
