@@ -8,3 +8,17 @@
  * This file is no longer required in Drupal 8.
  * @see https://www.drupal.org/node/2217931
  */
+/**
+ * Implements hook_theme().
+ */
+function hot_models_theme() {
+  // pre-formatage et template pour le menu.
+  $hooks['layoutmenu_hot_models_hotlock_menu'] = [
+    'render element' => 'element',
+    'preprocess functions' => [
+      'template_preprocess_layoutmenu_hot_models_hotlock_menu'
+    ],
+    'file' => 'fast_models.theme.inc'
+  ];  
+  return $hooks;
+}

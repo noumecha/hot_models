@@ -58,8 +58,8 @@ class HotModelsHotlockMenu extends FormatageModelsSection
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
-    /*if (is_array($build['menu_list']))
-      $build['menu_list'] = $this->getMenus($build['fn_second_nav_content']);*/
+    if (is_array($build['menu_list']))
+      $build['menu_list'] = $this->getMenus($build['menu_list']);
     dump($build['menu_list']);
     return $build;
   }
@@ -68,22 +68,22 @@ class HotModelsHotlockMenu extends FormatageModelsSection
      * 
      * {@inheritdoc}
      */
-    private function getMenus(array $fn_scd_nav) {
-        foreach ($fn_scd_nav as $k => $m) {
+    private function getMenus(array $hot_nav) {
+        foreach ($hot_nav as $k => $m) {
             if (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] === 'system_menu_block') {
                                
-                $fn_scd_nav[$k]['#attributes'] = [
+                $hot_nav[$k]['#attributes'] = [
                     'class' => [
                         'sn-bloc'
                     ]
                 ];
                 // set a new theme hoock () : refers to .theme.inc file
-                $fn_scd_nav[$k]['content']['#theme'] = 'layoutmenu_fast_models_fn_second_menu';
+                $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
                 //
-                $this->formatListMenus($fn_scd_nav[$k]['content']['#items']);
+                $this->formatListMenus($hot_nav[$k]['content']['#items']);
             }
         }
-        return $fn_scd_nav;
+        return $hot_nav;
     }
 
     /**
