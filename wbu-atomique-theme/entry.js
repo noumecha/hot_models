@@ -11,4 +11,5 @@ module.exports = {
     hot_models_testimony_teaser_text: "./src/js/sections/hot_models_testimony_teaser_text.js",
     hot_models_hotlock_footer: "./src/js/sections/hot_models_hotlock_footer.js",
     hot_models_hotlock_back_top: "./src/js/sections/hot_models_hotlock_back_top.js",
+    hot_models_hotlock_menu: "./src/js/sections/menus/hot_models_hotlock_menu.js",
 };

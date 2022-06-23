@@ -8,24 +8,32 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
  * 
- * hot models hotlock back to top 
+ * hot models hotlock menu 
+ * 
  * @Layout(
- *  id = "hot_models_hotlock_back_top",
- *  label = @Translation("hot_models_hotlock_back_top"),
+ *  id = "hot_models_hotlock_menu",
+ *  label = @Translation("hot_models_hotlock_menu"),
  *  category = @Translation("hot_models"),
- *  path = "layouts/sections",
- *  template = "hot_models_hotlock_back_top",
- *  library = "hot_models/hot_models_hotlock_back_top",
- *  default_region = "back_top_icon",
+ *  path = "layouts/sections/menus",
+ *  template = "hot_models_hotlock_menu",
+ *  library = "hot_models/hot_models_hotlock_menu",
+ *  default_region = "menu_logo",
  *  regions = {
- *      "back_top_icon" = {
- *          "label" = @Translation("back_top_icon"),   
+ *      "menu_logo" = {
+ *          "label" = @Translation("menu_logo"),   
+ *      },
+ *      "menu_list" = {
+ *          "label" = @Translation("menu_list"),  
+ *      },
+ *      "menu_butoon" = {
+ *          "label" = @Translation("menu_button"),
  *      }
  *  }
  * )
  * 
  */
-class HotModelsHotlockBackTop extends FormatageModelsSection
+
+class HotModelsHotlockMenu extends FormatageModelsSection
 {
 
    /**
@@ -59,27 +67,38 @@ class HotModelsHotlockBackTop extends FormatageModelsSection
    * {@inheritdoc}
    * 
    */
-  public function defaultConfiguration() 
+  public function defaultConfiguration()
   {
     return parent::defaultConfiguration() + [
         'css' => '',
-        'hmbt' => [
+        'hmhm' => [
             'builder-form' => true,
             'info' => [
                 'title' => 'Contenu',
                 'loader' => 'static'
             ],
             'fields' => [
-                'back_top_icon' => [
+                'menu_logo' => [
+                    'text_html' => [
+                        'label' => 'Logo Image',
+                        'value' => '<img src="https://hotlock.axiomthemes.com/wp-content/uploads/2017/10/retina-logo-2.png" height="43px" alt=""
+                                    srcset="">'
+                    ]
+                ],
+                'menu_list' => [
                   'text_html' => [
-                      'label' => 'Icone',
-                      'value' => '<i class="">
-                                      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="25" height="25"
-                                          preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                          d="M18 15a1 1 0 0 1-.64-.23L12 10.29l-5.37 4.32a1 1 0 0 1-1.41-.15a1 1 0 0 1 .15-1.41l6-4.83a1 1 0 0 1 1.27 0l6 5a1 1 0 0 1 .13 1.41A1 1 0 0 1 18 15Z" />
-                                      </svg>
-                                    </i>'
+                      'label' => '',
+                      'value' => ''
+                  ]
+                ],
+                'menu_button' => [
+                  'url' => [
+                    'label' => 'Button',
+                    'value' => [
+                      'link' => '#',
+                      'text' => '',
+                      'value' => 'APPOINTEMENT'
+                    ]
                   ]
                 ]
             ]

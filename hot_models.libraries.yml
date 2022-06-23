@@ -79,6 +79,12 @@ hot_models_hotlock_back_top:
   css:
     theme:
       layouts/css/hot_models_hotlock_back_top.css: {}
+hot_models_hotlock_menu:
+  js:
+    layouts/css/hot_models_hotlock_menu.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_hotlock_menu.css: {}
 # hot models teasers libraries 
 hot_models_overview_teaser:
   js:
