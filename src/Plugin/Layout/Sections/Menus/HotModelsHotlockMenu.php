@@ -9,7 +9,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
  *
- * hot models hotlock menu
+ * HOT models hotlock menu
  *
  * @Layout(
  *  id = "hot_models_hotlock_menu",
