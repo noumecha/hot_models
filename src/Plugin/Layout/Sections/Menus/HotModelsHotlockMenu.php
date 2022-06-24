@@ -60,7 +60,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     if (is_array($build['menu_list'])) {
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
     }
-    dump($build);
+    dump($build['#settings']);
     return $build;
   }
   
@@ -75,7 +75,8 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
           'class' => [
             'navbar-nav',
             'ml-auto',
-            'first-nav'
+            'first-nav',
+            $build['#settings']['bloc_style']->getValue()
           ]
         ];
         // set a new theme hoock () : refers to .theme.inc file
@@ -104,6 +105,12 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     }
   }
   
+  /**
+   * 
+   * add a buildConfigurationForm for bloc_style for 
+   * add some class to the menu 
+   * 
+   */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
     $form['bloc_style'] = [
@@ -113,7 +120,12 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     ];
     return $form;
   }
-  
+  /**
+   * 
+   * add a submitConfigurationForm for bloc_style for 
+   * add some class to the menu 
+   * 
+   */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     parent::submitConfigurationForm($form, $form_state);
     $this->configuration['bloc_style'] = $form_state->getValue('bloc_style');
@@ -127,7 +139,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
   public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
       'css' => '',
-      'bloc_style' => 'bg-white',
+      'bloc_style' => '',
       'hmhm' => [
         'builder-form' => true,
         'info' => [
