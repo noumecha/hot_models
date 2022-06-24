@@ -102,7 +102,8 @@ class HotModelsHotlockLockSmithingService extends FormatageModelsSection
                     ],
                     'lock_image' => [
                         'img_bg' => [
-                            'label' => 'Image bg',
+                            'label' => 'Image',
+                            'fids' => []
                         ]
                     ],
                     'lock_list_two' => [
