@@ -76,7 +76,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
             'navbar-nav',
             'ml-auto',
             'first-nav',
-            $build['#settings']['bloc_style']->getValue()
+            $build['#settings']['bloc_style']
           ]
         ];
         // set a new theme hoock () : refers to .theme.inc file
