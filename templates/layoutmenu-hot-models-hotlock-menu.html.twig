@@ -58,17 +58,17 @@
 				</li>
 			{% endfor %}
 		</ul>
-		<div class="header_search_1 d-flex ml-4 align-items-center">
-		{% if logged_in == true %}
-			<a href="/user/logout" id="header-search-button">
-			<i class="fas fa-sign-out-alt"></i>
-			</a>
-		{% else %}
-		<a href="/user/login" id="header-search-button">
-			<i class="fas fa-sign-in-alt"></i>
-			{{ 'Login'|trans }}
-		</a>
-		{% endif %}
-		</div>
 	{% endif %}
 {% endmacro %}
+<div class="header_search_1 d-flex ml-4 align-items-center">
+	{% if logged_in == true %}
+	<a href="/user/logout" id="header-search-button">
+		<i class="fas fa-sign-out-alt"></i>
+	</a>
+	{% else %}
+	<a href="/user/login" id="header-search-button">
+		<i class="fas fa-sign-in-alt"></i>
+		{{ 'Login'|trans }}
+	</a>
+	{% endif %}
+</div>
