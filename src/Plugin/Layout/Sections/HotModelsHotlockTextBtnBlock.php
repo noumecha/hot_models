@@ -77,7 +77,8 @@ class HotModelsHotlockTextBtnBlock extends FormatageModelsSection
             'fields' => [
                 'btn_block_bg' => [
                     'img_bg' => [
-                        'label' => 'Image bg'
+                        'label' => 'Image bg',
+                        'fids' => []
                     ]
                 ],
                 'btn_block_text' => [
