@@ -1,0 +1,14 @@
+{% if content %}
+	<div {{attributes.addClass('element')}}>
+		{% if content.icone %}
+			<div {{ region_attributes.icone.addClass('icon')}}>
+				{{ content.icone }}>
+			</div>
+		{% endif %}
+		{% if content.title %}
+			<div {{ region_attributes.title.addClass(['icon-title','pl-4'])}}>
+				{{ content.title  }}>
+			</div>
+		{% endif %}
+	</div>
+{% endif %}

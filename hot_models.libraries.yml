@@ -34,9 +34,10 @@ vuejs:
     url: https://github.com/vuejs/vue/blob/dev/LICENSE
     gpl-compatible: true
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js: {type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js:
+      { type: external, minified: true }
 
-# hot models sections libraries 
+# hot models sections libraries
 hot_models_overview_section:
   js:
     layouts/js/hot_models_overview_section.js: {}
@@ -85,13 +86,19 @@ hot_models_hotlock_menu:
   css:
     theme:
       layouts/css/hot_models_hotlock_menu.css: {}
-# hot models teasers libraries 
+# hot models teasers libraries
 hot_models_overview_teaser:
   js:
     layouts/js/hot_models_overview_teaser.js: {}
   css:
     theme:
       layouts/css/hot_models_overview_teaser.css: {}
+hot_models_service_items_teaser:
+  js:
+    layouts/js/hot_models_service_items_teaser.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_service_items_teaser.css: {}
 hot_models_team_teaser:
   js:
     layouts/js/hot_models_team_teaser.js: {}
