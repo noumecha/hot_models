@@ -1,0 +1,14 @@
+{% if content %}
+	<section {{ attributes.addClass(['our-services-handler']) }}>
+		<div class="container">
+			{% if content.titre  %}
+				<h6 {{region_attributes.titre.addclass('section-title')}}>
+					{{content.titre}}
+				</h6>
+			{% endif %}
+			{% if content.service_content %}
+				{{ content.service_content }}
+			{% endif %}
+		</div>
+	</section>
+{% endif %}
