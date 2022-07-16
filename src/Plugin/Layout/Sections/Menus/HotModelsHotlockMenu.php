@@ -105,25 +105,22 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
   }
   
   /**
-   * 
-   * add a buildConfigurationForm for bloc_style for 
-   * add some class to the menu 
-   * 
+   * add a buildConfigurationForm for bloc_style for
+   * add some class to the menu
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
     $form['bloc_style'] = [
       '#type' => 'textfield',
-      '#title' => $this->t(' Bloc style '),
+      '#title' => $this->t(' Style applique sur le menu (nav) '),
       '#default_value' => $this->configuration['bloc_style']
     ];
     return $form;
   }
+  
   /**
-   * 
-   * add a submitConfigurationForm for bloc_style for 
-   * add some class to the menu 
-   * 
+   * add a submitConfigurationForm for bloc_style for
+   * add some class to the menu
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     parent::submitConfigurationForm($form, $form_state);
@@ -139,6 +136,13 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     return parent::defaultConfiguration() + [
       'css' => '',
       'bloc_style' => '',
+      'derivate' => [
+        'value' => 'default',
+        'options' => [
+          'default' => 'Default',
+          'mn-fixed-top' => 'Menu fixed top'
+        ]
+      ],
       'hmhm' => [
         'builder-form' => true,
         'info' => [

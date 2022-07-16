@@ -6,13 +6,13 @@
 			{% set lists = content.description|layout_value %}
 			{% for key,value in lists[0] %}
 				<div {{ region_attributes.description.addClass('description') }}>
-					<div class="service-items ">
+					<div class="service-items">
 						{{ value }}
 					</div>
 				</div>
 			{% endfor %}
 		{% endif %}
-		{% if content.list_content|has_value %}
+		{% if content.list_content.layout_builder_add_block  %}
 			{{content.list_content}}
 		{% endif %}
 
