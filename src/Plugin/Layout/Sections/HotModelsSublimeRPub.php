@@ -26,7 +26,10 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *       },
  *      "sublime_r_pub_link" = {
  *          "label" = @Translation("sublime_r_pub_link"),
- *       }
+ *       },
+ *      "sublime_r_pub_bg" = {
+ *          "label" = @Translation("sublime_r_pub_bg"),     
+ *      }
  *  }
  * )
  *
@@ -77,6 +80,11 @@ class HotModelsSublimeRPub extends FormatageModelsSection
                 'text_html' => [
                     'label' => 'Titre',
                     'value' => 'Amazing Devices'
+                ]
+            ],
+            'sublime_r_pub_bg' => [
+                'img_bg' => [
+                    'label' => 'Image de fond',
                 ]
             ],
             'sublime_r_pub_description' => [

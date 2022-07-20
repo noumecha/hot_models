@@ -1,8 +1,14 @@
 {% if content %}
+    {% if content.sublime_r_pub_bg.layout_builder_add_block %}
+        {{ content.sublime_r_pub_bg }}
+    {% endif %}
 <div {{ attributes.addClass('container') }}>
     <div class="row">
         <div class="pub-teaser-handler col-lg-12">
             <div class="pub">
+                {% if content.sublime_r_pub_bg|layout_bg_img %}
+                    {% set attributes2=content.sublime_r_pub_bg|layout_bg_img %}
+                {% endif %}
                 <div class="banner">
                     <div class="content">
                         {% if content.sublime_r_pub_title %}
