@@ -22,7 +22,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *          "label" = @Translation("sublime_r_pub_title"),     
  *      },
  *      "sublime_r_pub_description" = {
- *          "label" = @Translation(" svg + titre"),
+ *          "label" = @Translation(" sublime_r_pub_description"),
  *       },
  *      "sublime_r_pub_link" = {
  *          "label" = @Translation("sublime_r_pub_link"),
@@ -94,12 +94,12 @@ class HotModelsSublimeRPub extends FormatageModelsSection
                 ]
             ],
             'sublime_r_pub_link' => [
-                'text_html' => [
+                'url' => [
                     'label' => 'Lien',
                     'value' => [
+                        'link' => '#',
                         'text' => 'See More',
                         'class' => 'link',
-                        'href' => '#'
                     ]
                 ]
             ]
