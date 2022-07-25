@@ -99,7 +99,7 @@ class HotModelsSublimeRPub extends FormatageModelsSection
                     'value' => [
                         'text' => 'See More',
                         'class' => 'link',
-                        'href' => '#'
+                        'link' => '#'
                     ]
                 ]
             ]
