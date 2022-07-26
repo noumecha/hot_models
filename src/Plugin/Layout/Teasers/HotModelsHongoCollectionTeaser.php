@@ -16,7 +16,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *  path = "layouts/teasers",
  *  template = "hot_models_hongo_collection_teaser",
  *  library = "hot_models/hot_models_hongo_collection_teaser",
- *  default_region = "",
+ *  default_region = "collection_title",
  *  regions = {
  *      "collection_title" = {
  *          "label" = @Translation("collection_title"),     
@@ -32,7 +32,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  * 
  */
 
-class HotModelsHongoCollection extends FormatageModelsTeasers 
+class HotModelsHongoCollectionTeaser extends FormatageModelsTeasers 
 {
 
     /**

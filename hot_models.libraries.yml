@@ -38,6 +38,12 @@ vuejs:
       { type: external, minified: true }
 
 # hot models sections libraries
+hot_models_hongo_collection_section:
+  js:
+    layouts/js/hot_models_hongo_collection_section.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_hongo_collection_section.css: {}
 hot_models_overview_section:
   js:
     layouts/js/hot_models_overview_section.js: {}
