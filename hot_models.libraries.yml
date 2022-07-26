@@ -92,7 +92,23 @@ hot_models_hotlock_menu:
   css:
     theme:
       layouts/css/hot_models_hotlock_menu.css: {}
+####################################
+####################################
 # hot models teasers libraries
+####################################
+####################################
+hot_models_sublime_right_teaser:
+  js:
+    layouts/js/hot_models_sublime_right_teaser.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_sublime_right_teaser.css: {}
+hot_models_sublime_left_teaser:
+  js:
+    layouts/js/hot_models_sublime_left_teaser.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_sublime_left_teaser.js: {}
 hot_models_hongo_collection_teaser:
   js:
     layouts/js/hot_models_hongo_collection_teaser.js: {}
