@@ -5,12 +5,12 @@
             <div class="desc">
                 {% if content.collection_title %}
                     <div {{ region_attributes.collection_title.addClass('title') }}>
-                        {{ content.collection_title|layout_value }}
+                        {{ content.collection_title }}
                     </div>
                 {% endif %}
                 <div class="shop">
                     {% if content.collection_link %}
-                        {{ content.collection_link|layout_value }}
+                        {{ content.collection_link }}
                     {% endif %}
                 </div>
             </div>
@@ -18,7 +18,7 @@
     </div>
     {% if content.collection_image %}
         <div {{ region_attributes.collection_image.addClass('img-handler') }}>
-            {{ content.collection_image|layout_value }}
+            {{ content.collection_image }}
         </div>
     {% endif %}
 </div>
