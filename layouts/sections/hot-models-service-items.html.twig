@@ -6,14 +6,23 @@
 			{% set lists = content.description|layout_value %}
 			{% for key,value in lists[0] %}
 				<div {{ region_attributes.description.addClass('description') }}>
+<<<<<<< HEAD
 					<div class="service-items">
+=======
+					<div class="service-items ">
+>>>>>>> 518ed851d43fa3620b7ebfd27543bdf8b3b48d77
 						{{ value }}
 					</div>
 				</div>
 			{% endfor %}
 		{% endif %}
+<<<<<<< HEAD
 		{% if content.list_content.layout_builder_add_block  %}
 			{{content.list_content}}
+=======
+		{% if content.list_content|has_value %}
+			{{ content.list_content }}
+>>>>>>> 518ed851d43fa3620b7ebfd27543bdf8b3b48d77
 		{% endif %}
 	</section>
 {% endif %}

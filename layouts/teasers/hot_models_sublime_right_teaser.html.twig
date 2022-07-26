@@ -3,9 +3,9 @@
         {{ content.right_teaser_img }}
     {% endif %}
     {% if content.right_teaser_img|layout_bg_img %}
-            {% set attributes2=content.right_teaser_img|layout_bg_img %}
-        {% endif %}
-    <div {{ attributes2.addClass('box-x') }}>
+        {% set attributes=content.right_teaser_img|layout_bg_img %}
+    {% endif %}
+    <div {{ attributes.addClass('box-x') }}>
         <div class="text-wrapper">
             <div class="text-shadow">
                 {% if content.right_teaser_title %}
