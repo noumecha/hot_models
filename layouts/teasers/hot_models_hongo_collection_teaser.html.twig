@@ -1,0 +1,25 @@
+{% if content %}
+<div {{ attributes.addClass(['col-lg-16','col-child1','element']) }}>
+    <div class="text-wrapper">
+        <div class="content">
+            <div class="desc">
+                {% if content.collection_title %}
+                    <div {{ region_attributes.collection_title.addClass('title') }}>
+                        {{ content.collection_title|layout_value }}
+                    </div>
+                {% endif %}
+                <div class="shop">
+                    {% if content.collection_link %}
+                        {{ content.collection_link|layout_value }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>                
+    </div>
+    {% if content.collection_image %}
+        <div {{ region_attributes.collection_image.addClass('img-handler') }}>
+            {{ content.collection_image|layout_value }}
+        </div>
+    {% endif %}
+</div>
+{% endif %}
