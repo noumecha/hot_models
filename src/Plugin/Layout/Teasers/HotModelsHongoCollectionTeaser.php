@@ -6,8 +6,8 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
 
-/***
- * A custom layout for hongo collection : hot_models module 
+/**
+ * A custom teaser for hongo collection : hot_models module 
  * 
  * @Layout(
  *  id = "hot_models_hongo_collection_teaser",
