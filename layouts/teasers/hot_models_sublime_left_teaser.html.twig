@@ -1,0 +1,46 @@
+{% if content %}
+    {% if content.left_teaser_img.layout_builder_add_block %}
+        {{ content.left_teaser_img }}
+    {% endif %}
+    <div {{ attributes.addClass('box-y') }}>
+        {% if content.left_teaser_img|layout_bg_img %}
+            {% set attributes2=content.left_teaser_img|layout_bg_img %}
+        {% endif %}
+        <div {{ attributes2.addClass('phone_img') }}>                  
+        </div>
+        <div class="inner-square ">
+            <div class="content">
+                {% if content.left_teaser_title %}
+                <div {{ region_attributes.left_teaser_title.addClass('title')}}>
+                    {{ content.left_teaser_title }}
+                </div>
+                {% endif %}
+                <div class="see-more">
+                    {% if content.left_teaser_link %}
+                        {{ content.left_teaser_link }}
+                    {% endif %}
+                </div>
+            </div>
+                            
+            <div class="sticker-handler">
+                {% if content.left_teaser_sticker %}
+                <div {{ region_attributes.left_teaser_sticker.addClass('sticker')}} >
+                    {{ content.left_teaser_sticker }}
+                </div>
+                {% endif %}
+                <div class="discount">
+                    {% if content.left_teaser_price %}
+                    <div {{ region_attributes.left_teaser_price.addClass('discount_value')}}>
+                        {{ content.left_teaser_price }}<span class="up">%</span>
+                    </div>
+                    {% endif %}
+                    {% if content.left_teaser_type %}
+                    <div>
+                        {{ content.left_teaser_type }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,29 @@
+{% if content %}
+    {% if content.right_teaser_img.layout_builder_add_block %}
+        {{ content.right_teaser_img }}
+    {% endif %}
+    {% if content.right_teaser_img|layout_bg_img %}
+            {% set attributes2=content.right_teaser_img|layout_bg_img %}
+        {% endif %}
+    <div {{ attributes2.addClass('box-x') }}>
+        <div class="text-wrapper">
+            <div class="text-shadow">
+                {% if content.right_teaser_title %}
+                <div {{ region_attributes.right_teaser_title.addClass('title_avds') }}>
+                    {{ content.right_teaser_title }}
+                </div>
+                {% endif %}
+                {% if content.right_teaser_description %}
+                <div {{ region_attributes.right_teaser_description.addClass('text_avds')}}>
+                    {{ content.right_teaser_description }}
+                </div>
+                {% endif %}
+                <div class="avds_link">
+                    {% if content.right_teaser_link %}
+                        {{ content.right_teaser_link }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
