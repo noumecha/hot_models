@@ -1,0 +1,18 @@
+{% if content %}
+<section {{ attributes.addClass('collection-section-handler')}}>
+    <div class="container-fluid">
+        <div class="row m-5">
+            {% if content.sublime_collection_left %}
+                <div {{ region_attributes.sublime_collection_left.addClass(['col-lg-5 ','col-sm-12','col-md-12'])}}>
+                    {{ content.sublime_collection_left }}
+                </div>
+            {% endif %}
+            {% if content.sublime_collection_right %}
+                <div {{ region_attributes.sublime_collection_right.addClass('col-lg-7')}}>
+                    {{ content.sublime_collection_right }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endif %}

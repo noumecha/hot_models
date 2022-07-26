@@ -36,8 +36,17 @@ vuejs:
   js:
     https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js:
       { type: external, minified: true }
-
+####################################
+####################################
 # hot models sections libraries
+####################################
+####################################
+hot_models_sublime_collection:
+  js:
+    layouts/js/hot_models_sublime_collection.js: {}
+  css:
+    theme:
+      layouts/css/hot_models_sublime_collection.css: {}
 hot_models_hongo_collection_section:
   js:
     layouts/js/hot_models_hongo_collection_section.js: {}
