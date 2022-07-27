@@ -4,9 +4,9 @@
         <div class="content">
             <div class="desc">
                 {% if content.collection_title %}
-                    <div {{ region_attributes.collection_title.addClass('title') }}>
+                    <h3 {{ region_attributes.collection_title.addClass('title') }}>
                         {{ content.collection_title }}
-                    </div>
+                    </h3>
                 {% endif %}
                 <div class="shop">
                     {% if content.collection_link %}

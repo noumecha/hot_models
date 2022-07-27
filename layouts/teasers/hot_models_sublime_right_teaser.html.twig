@@ -9,9 +9,9 @@
         <div class="text-wrapper">
             <div class="text-shadow">
                 {% if content.right_teaser_title %}
-                <div {{ region_attributes.right_teaser_title.addClass('title_avds') }}>
+                <h3 {{ region_attributes.right_teaser_title.addClass('title_avds') }}>
                     {{ content.right_teaser_title }}
-                </div>
+                </h3>
                 {% endif %}
                 {% if content.right_teaser_description %}
                 <div {{ region_attributes.right_teaser_description.addClass('text_avds')}}>
