@@ -8,7 +8,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
 
 /**
  * Teaser for overview section
- * 
+ *
  * @Layout(
  *  id = "hot_models_overview_teaser",
  *  label = @Translation("hot_models_overview_teaser"),
@@ -18,24 +18,23 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *  library = "hot_models/hot_models_overview_teaser",
  *  regions = {
  *      "o_teaser_icon" = {
- *          "label" = @Translation("o_teaser_icon"),     
+ *          "label" = @Translation("o_teaser_icon"),
  *      },
  *      "o_teaser_title" = {
- *          "label" = @Translation("o_teaser_title"),     
+ *          "label" = @Translation("o_teaser_title"),
  *      },
  *      "o_teaser_title_back" = {
- *          "label" = @Translation("o_teaser_title_back"),     
+ *          "label" = @Translation("o_teaser_title_back"),
  *      },
  *      "o_teaser_description" = {
- *          "label" = @Translation("o_teaser_description"),     
+ *          "label" = @Translation("o_teaser_description"),
  *      }
  *  }
  * )
  */
-
-class HotModelsOverviewTeaser extends FormatageModelsTeasers 
-{
-    /**
+class HotModelsOverviewTeaser extends FormatageModelsTeasers {
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
@@ -45,8 +44,8 @@ class HotModelsOverviewTeaser extends FormatageModelsTeasers
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
     $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/teasers/hot-models-hotlock-overview-teaser.png");
   }
-
-   /**
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels:build()
@@ -58,26 +57,33 @@ class HotModelsOverviewTeaser extends FormatageModelsTeasers
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-
+  
   /**
-   * 
+   *
    * {@inheritdoc}
-   * 
+   *
    */
   public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
-        'css' => '',
-        'hovt' => [
-            'builder-form'  => true,
-            'info' => [
-                'title' => 'Contenu',
-                'loader' => 'static'
-            ],
-            'fields' => [
-                'o_teaser_icon' => [
-                  'text_html' => [
-                      'label' => 'Icone',
-                      'value' => '<i class="">
+      'css' => '',
+      "derivate" => [
+        'value' => 'default',
+        'options' => [
+          'default' => 'default',
+          'cover-image' => 'cover-image'
+        ]
+      ],
+      'hovt' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'o_teaser_icon' => [
+            'text_html' => [
+              'label' => 'Icone',
+              'value' => '<i class="">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="80"
                                                  height="81.67" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 49">
                                 <g fill="none" stroke="currentColor" stroke-width="4">
@@ -88,32 +94,32 @@ class HotModelsOverviewTeaser extends FormatageModelsTeasers
                                 </g>
                             </svg>
                         </i>'
-                    ]
-                ],
-                'o_teaser_title' => [
-                    'text_html' => [
-                        'label' => 'Title Front',
-                        'value' => '<p>video surveillance</p>'
-                    ]
-                ],
-                'o_teaser_title_back' => [
-                    'text_html' => [
-                        'label' => 'Title Back',
-                        'value' => '<p>video surveillance</p>'
-                    ]
-                ],
-                'o_teaser_description' => [
-                    'text_html' => [
-                        'label' => 'description',
-                        'value' => '<p>
+            ]
+          ],
+          'o_teaser_title' => [
+            'text_html' => [
+              'label' => 'Title Front',
+              'value' => '<p>video surveillance</p>'
+            ]
+          ],
+          'o_teaser_title_back' => [
+            'text_html' => [
+              'label' => 'Title Back',
+              'value' => '<p>video surveillance</p>'
+            ]
+          ],
+          'o_teaser_description' => [
+            'text_html' => [
+              'label' => 'description',
+              'value' => '<p>
                             To stay on the safe side, besides door locks, people often install video
                             surveillance in their homes
                         </p>'
-                    ]
-                ]
             ]
+          ]
         ]
+      ]
     ];
   }
-
+  
 }

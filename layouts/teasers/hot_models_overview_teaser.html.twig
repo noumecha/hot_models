@@ -1,34 +1,36 @@
 {% if content %}
-<div {{attributes.addClass('col-md-4','col-sm-6')}} >
-    <div class="single-service-card">
-        <div class="card ">
-            <div class="front">
-            {% if content.o_teaser_icon %}
-                <span {{ region_attributes.o_teaser_icon.addClass('icon')}}>
-                    {{ content.o_teaser_icon|layout_value }}>
-                </span>
-            {% endif %}
-            {% if content.o_teaser_title %}
-                <div {{ region_attributes.o_teaser_title.addClass('title')}} >
-                    {{ content.o_teaser_title|layout_value }}
-                </div>
-            {% endif %}
-            </div>
-            <div class="back">
-                <div class="back-content middle">
-                {% if content.o_teaser_title_back %}
-                    <div {{ region_attributes.o_teaser_title_back.addClass('title')}} >
-                        {{ content.o_teaser_title_back|layout_value }}
-                    </div>
-                {% endif %}
-                {% if content.o_teaser_description %}
-                    <div {{ region_attributes.o_teaser_description.addClass('description')}} >
-                        {{ content.o_teaser_description|layout_value }}
-                    </div>
-                {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
+<div {{attributes.addClass('single-service-card')}}>
+	{% if content.o_teaser_icon.layout_builder_add_block %}
+		{{ content.o_teaser_icon }}
+		{{ content.o_teaser_title }}
+	{% endif %}
+	<div class="card ">
+		<div class="front">
+			{% if content.o_teaser_icon %}
+			<span {{ region_attributes.o_teaser_icon.addClass('icon')}}> {{ content.o_teaser_icon|layout_value }}
+			</span>
+			{% endif %}
+			{% if content.o_teaser_title %}
+			<div {{ region_attributes.o_teaser_title.addClass('title')}}>
+				{{ content.o_teaser_title|layout_value }}
+			</div>
+			{% endif %}
+		</div>
+		<div class="back">
+			<div class="back-content middle">
+				{% if content.o_teaser_title_back %}
+				<div {{ region_attributes.o_teaser_title_back.addClass('title')}}>
+					{{ content.o_teaser_title_back|layout_value }}
+				</div>
+				{% endif %}
+				{% if content.o_teaser_description %}
+				<div
+					{{ region_attributes.o_teaser_description.addClass('description')}}>
+					{{ content.o_teaser_description|layout_value }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>
 {% endif %}

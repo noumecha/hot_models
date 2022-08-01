@@ -1,21 +1,9 @@
 {% if content %}
-	<section {{ attributes.addClass(['hotlock-service-items','no-gutters','row']) }}>
-		{% if content.description.layout_builder_add_block %}
-			{{ content.description }}
-		{% else %}
-			{% set lists = content.description|layout_value %}
-			{% for key,value in lists[0] %}
-				<div {{ region_attributes.description.addClass('description') }}>
-					<div class="service-items">
-						{{ value }}
-					</div>
-				</div>
-			{% endfor %}
-		{% endif %}
-		{# if content.list_content.layout_builder_add_block  #}
-			{# content.list_content #}
-		{% if content.list_content|has_value %}
-			{{ content.list_content }}
-		{% endif %}
-	</section>
+<section {{ attributes.addClass(['hotlock-service-items']) }}>	
+	{% if content.description %}
+    	{% for item in content.description|array_elements(region_attributes.description.addClass('description')) %}
+    	   {{ item }} 
+    	{% endfor %}
+	{% endif %}
+</section>
 {% endif %}

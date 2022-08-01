@@ -1,6 +1,6 @@
 {% if content %}
     <section {{ attributes.addClass('services-overview-section-handler')}} >
-        <div class="row  no-gutters align-center justify-content-between">
+        <div class="row no-gutters align-center justify-content-between">
             <div class="col-lg-5 service-description ">
                 {% if content.subtitle_OS %}
                     <div {{ region_attributes.subtitle_OS.addClass('head-title')}}>
@@ -24,11 +24,11 @@
                 {% endif %}
             </div>
             <div class="col-lg-7 services-elements "> 
-                <div class="row no-gutters d-flex">
-                    {% if content.services_OS %}
-                        {{ content.services_OS|layout_value }}
-                    {% endif %}
+            	{% if content.services_OS  %}
+                <div {{ region_attributes.services_OS.addClass('services_OS') }}>                    
+                        {{ content.services_OS|layout_value }}                    
                 </div>
+                {% endif %}
             </div>
         </div>
     </section>

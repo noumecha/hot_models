@@ -73,6 +73,7 @@ class HotModelsOverviewSection extends FormatageModelsSection {
   public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
       'css' => '',
+      'region_tag_services_OS' => 'row no-gutters',
       'hmos' => [
         'builder-form' => true,
         'info' => [
