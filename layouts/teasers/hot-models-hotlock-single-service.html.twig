@@ -21,13 +21,17 @@
 			{% endif %}
 			{% if content.description %}
 				<div {{ region_attributes.description.addClass(['description','descriptor-item'])}}>
-					{% set content_desc %}
-					{{ content.description|layout_value }}
-					{% endset %}
-					{% set content_desc2 %}
-					{{content_desc|trim|striptags }}
-					{% endset %}
-					{{ (content_desc2|length > 150 ? content_desc2|slice(0, 150) ~ '…' : content_desc2)  }}
+					{% if content.description.layout_builder_add_block %} 
+						 {{content.description}}
+					{% else %}
+						{% set content_desc %}
+						{{ content.description|layout_value }}
+						{% endset %}
+						{% set content_desc2 %}
+						{{content_desc|trim|striptags }}
+						{% endset %}
+						{{ (content_desc2|length > 150 ? content_desc2|slice(0, 150) ~ '…' : content_desc2)  }}
+					{% endif %}
 				</div>
 			{% endif %}
 			{% if content.call_to_action %}
