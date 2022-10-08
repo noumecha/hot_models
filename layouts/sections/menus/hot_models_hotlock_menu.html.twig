@@ -13,7 +13,9 @@
     <div class="collapse navbar-collapse nav-links" id="navbarSupportedContent">
       {% if content.menu_list %}
         <ul {{ region_attributes.menu_list.addClass(['navbar-nav','ml-auto'])}}>
-          {{ content.menu_list }}
+        	<nav class="navbar-nav ml-auto first-nav bg-transparent">
+              {{ content.menu_list|layout_value }}
+            </nav>
         </ul>
       {% endif %}
 
