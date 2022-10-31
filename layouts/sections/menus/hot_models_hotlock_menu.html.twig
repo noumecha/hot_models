@@ -1,6 +1,6 @@
 {% if content %}
 <header {{ attributes.addClass('header-section-handler')}}>
-  <nav class="navbar navbar-expand-lg header-nav navbar-light ">
+  <nav class="navbar navbar-expand-lg header-nav navbar-light first-nav">
     {% if content.menu_logo %}
     <div {{ region_attributes.menu_logo.addClass('navbar-brand')}} href="#">
       {{ content.menu_logo }}
@@ -10,12 +10,12 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse nav-links" id="navbarSupportedContent">
-      {% if content.menu_list %}
+    <div class="collapse navbar-collapse nav-links " id="navbarSupportedContent">
+      {% if content.menu_list.layout_builder_add_block %}
+      	{{ content.menu_list }}
+      {% else %}
         <ul {{ region_attributes.menu_list.addClass(['navbar-nav','ml-auto'])}}>
-        	<nav class="navbar-nav ml-auto first-nav bg-transparent">
               {{ content.menu_list|layout_value }}
-            </nav>
         </ul>
       {% endif %}
 

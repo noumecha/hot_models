@@ -28,9 +28,9 @@
 	{% import _self as menus %}
 	{% if items %}
 		{% if menu_level == 0 %}
-			<ul {{attributes.addClass('nav-list')}}>
+			{#<ul {{attributes.addClass('nav-list')}}>#}
 		{% else %}
-			<ul class="sub-menu">
+			{#<ul class="sub-menu">#}
         {% endif %}
 			{% for item in items %}
 				{%
@@ -57,10 +57,10 @@
 					{% endif %}
 				</li>
 			{% endfor %}
-		</ul>
+		{# </ul> #}
 	{% endif %}
 {% endmacro %}
-<div class="header_search_1 d-flex ml-4 align-items-center">
+<div class="header_search_1 d-flex ml-md-4 align-items-center py-3 pr-5">
 	{% if logged_in == true %}
 	<a href="/user/logout" id="header-search-button">
 		<i class="fas fa-sign-out-alt"></i>

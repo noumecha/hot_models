@@ -68,9 +68,9 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
    * {@inheritdoc}
    */
   private function getMenus(array $hot_nav, array $build) {
-    // dump($hot_nav);
     foreach ($hot_nav as $k => $m) {
       if (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] == 'system_menu_block') {
+          
         $hot_nav[$k]['#attributes'] = [
           'class' => [
             'navbar-nav',
@@ -81,7 +81,9 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
         ];
         // set a new theme hoock () : refers to .theme.inc file
         $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
-        //
+        // Cette entrée n'existe toujours pas, on peut avoir uniquement le #cache et #markup.
+        
+        if(!empty($hot_nav[$k]['content']['#items']))
         $this->formatListMenus($hot_nav[$k]['content']['#items']);
       }
       elseif (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] == 'field_block') {
@@ -99,6 +101,15 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
           $this->formatListMenus($hot_nav[$k]['content'][0]['#items']);
           $hot_nav[$k]['content']['#items'] = $hot_nav[$k]['content'][0]['#items'];
         }
+      }
+      // Le rendu peut etre uniquement dans un cache. (peu propable sauf si le menu est vide).
+      elseif (!empty($m['#cache']['tags'])) {
+          foreach ($m['#cache']['tags'] as $value) {
+              if(str_contains($value, "config:system.menu.")){
+                  $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
+                  break;
+              }
+          }
       }
     }
     return $hot_nav;
