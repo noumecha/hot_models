@@ -1,6 +1,6 @@
 name: hot_models
 type: module
-description: &quot;simple module for drupal hotlock site&quot;
+description: 'simple module for drupal hotlock site'
 package: Custom
 core: 8.x
 core_version_requirement: ^8 || ^9

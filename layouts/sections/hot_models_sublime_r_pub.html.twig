@@ -2,13 +2,14 @@
     {% if content.sublime_r_pub_bg.layout_builder_add_block %}
         {{ content.sublime_r_pub_bg }}
     {% endif %}
-<div {{ attributes.addClass('container') }}>
+    {% if content.sublime_r_pub_bg|layout_bg_img %}
+		{% set attributes = attributes.merge(content.sublime_r_pub_bg|layout_bg_img) %}
+	{% endif %}
+<div {{ attributes.addClass('pub-sublime-section') }}>
+	<div class="container">	
     <div class="row">
         <div class="pub-teaser-handler col-lg-12">
-            {% if content.sublime_r_pub_bg|layout_bg_img %}
-                    {% set attributes2=content.sublime_r_pub_bg|layout_bg_img %}
-                {% endif %}
-            <div {{ attributes2.addClass('pub') }}>    
+            <div class="pub">    
                 <div class="banner">
                     <div class="content">
                         {% if content.sublime_r_pub_title %}
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 {% endif %}
