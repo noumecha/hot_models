@@ -13,9 +13,12 @@
         {% endif %}
         <div class="d-flex justify-content-center">
             {% if content.team_section_btn %}
-            <div {{ region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])}}>
+                {% for item in content.team_section_btn|array_elements(region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])) %}
+                    {{ item }}
+                {% endfor %}
+            {#<div {{ region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])}}>
                 {{ content.team_section_btn|layout_value }}
-            </div>
+            </div>#}
             {% endif %}
         </div>
     </div>

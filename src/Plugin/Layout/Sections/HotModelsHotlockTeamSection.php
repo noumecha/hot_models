@@ -94,7 +94,7 @@ class HotModelsHotlockTeamSection extends FormatageModelsSection
                         'value' => [
                             "link" => "#",
                             "text" => "more about team",
-                            "class" => ""
+                            "class" => "htl-btn--bg-inv htl-btn"
                         ]
                     ]
                 ]
