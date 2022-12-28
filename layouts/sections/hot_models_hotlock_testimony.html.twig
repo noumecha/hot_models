@@ -2,19 +2,19 @@
 <section {{ attributes.addClass('testimony-section-handler') }}>
     <div class="container-fluid p-0">
         <div {{ attributes.addClass(['services-testimony','row'])}}>
-            <div class="col-lg-6 done">
+            <div class="col-lg-6 p-0 done">
                 {% if content.testimony_counter_contener %}
                 <div {{ region_attributes.testimony_counter_contener.addClass(['all-single-services','row'])}}>
                     {{ content.testimony_counter_contener|layout_value }}
                 </div>
                 {% endif %}
             </div>
-            <div class="col-lg-6 testimony-handler">
+            <div class="col-lg-6 p-0 testimony-handler">
                 <div class="testimony">
                     {% if content.testimony_title %}
-                    <div {{ region_attributes.testimony_title.addClass('title') }}>
+                    <h1 {{ region_attributes.testimony_title.addClass('title') }}>
                         {{ content.testimony_title|layout_value }}
-                    </div>
+                    </h1>
                     {% endif %}
                     {% if content.testimony_text_contener %}
                     <div {{ region_attributes.testimony_text_contener.addClass('slider-container') }}>

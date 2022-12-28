@@ -71,6 +71,7 @@ class HotModelsHotlockTestimony extends FormatageModelsSection
         'css' => '',
         'hmht' => [
             'builder-form' => true,
+            'region_css_testimony_title' => 'h1',
             'info' => [
                 'title' => 'Contenu',
                 'loader' => 'static'
