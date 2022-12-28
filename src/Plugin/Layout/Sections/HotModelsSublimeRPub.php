@@ -71,6 +71,7 @@ class HotModelsSublimeRPub extends FormatageModelsSection
       'css' => '',
       'hmsrp_form' => [
         'builder-form' => true,
+            'region_css_sublime_r_pub_title' => 'h1',
             'info' => [
               'title' => 'List content',
               'loader' => 'static'
