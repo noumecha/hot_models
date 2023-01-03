@@ -13,7 +13,7 @@
         {% endif %}
         <div class="d-flex justify-content-center">
             {% if content.team_section_btn %}
-                {% for item in content.team_section_btn|array_elements(region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])) %}
+                {% for item in content.team_section_btn|array_elements(region_attributes.team_section_btn.addClass()) %}
                     {{ item }}
                 {% endfor %}
             {#<div {{ region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])}}>
