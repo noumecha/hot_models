@@ -4,9 +4,9 @@
         <div class=" row">
             <div class="col-lg-3 col-md-5 footer-column">
                 {% if content.footer_logo %}
-                <div {{ region_attributes.footer_logo.addClass('img-logo ')}}>
+                <h1 {{ region_attributes.footer_logo.addClass(['img-logo','h1' ])}}>
                     {{ content.footer_logo|layout_value }}
-                </div>
+                </h1>
                 {% endif %}
                 {% if content.footer_list_one %}
                 <div {{ region_attributes.footer_list_one.addClass('info-bloc')}}>
@@ -16,9 +16,9 @@
             </div>
             <div class="col-lg-3 col-md-5 footer-column">
                 {% if content.footer_title_one %}
-                <div {{ region_attributes.footer_title_one.addClass('head-element')}}>
+                <h4 {{ region_attributes.footer_title_one.addClass(['head-element','h4'])}}>
                     {{ content.footer_title_one|layout_value }}
-                </div>
+                </h4>
                 {% endif %}
                 {% if content.footer_list_two %}
                 <div {{ region_attributes.footer_list_two.addClass('links')}}>
@@ -28,9 +28,9 @@
             </div>
             <div class="col-lg-3 col-md-5 footer-column ">
                 {% if content.footer_title_two %}
-                <div {{ region_attributes.footer_title_two.addClass('head-element')}}>
+                <h4 {{ region_attributes.footer_title_two.addClass(['head-element','h4'])}}>
                     {{ content.footer_title_two|layout_value }}
-                </div>
+                </h4>
                 {% endif %}
                 {% if content.footer_list_three %}
                 <div {{ region_attributes.footer_list_three.addClass('links')}}>
@@ -40,9 +40,9 @@
             </div>
             <div class="col-lg-3 col-md-5 footer-column">
                 {% if content.footer_title_three %}
-                <div {{ region_attributes.footer_title_three.addClass('head-element')}}>
+                <h4 {{ region_attributes.footer_title_three.addClass(['head-element','h4'])}}>
                     {{ content.footer_title_three|layout_value }}
-                </div>
+                </h4>
                 {% endif %}
                 {% if content.footer_subtitle %}
                 <div {{region_attributes.footer_subtitle.addClass('description')}}>
@@ -57,14 +57,14 @@
             </div>
         </div>
         <div class="copyright text-center">
-            <p class="elements">
-                {% if content.footer_copyright_links %}
+            <div class="elements">
+                {#% if content.footer_copyright_links %}
                     {{ content.footer_copyright_links|layout_value }}
-                {% endif %}
+                {% endif %#}
                 {% if content.footer_copyright %}
                     {{ content.footer_copyright|layout_value }}
                 {% endif %}
-            </p>
+            </div>
         </div>
     </div>
 </footer>

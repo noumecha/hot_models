@@ -11,20 +11,23 @@
         <div class="pub-teaser-handler col-lg-12">
             <div class="pub">    
                 <div class="banner">
-                    <div class="content">
+                    <div class="content-block">
                         {% if content.sublime_r_pub_title %}
-                        <h3 {{ region_attributes.sublime_r_pub_title.addClass('title')}}>
+                        <h1 {{ region_attributes.sublime_r_pub_title.addClass(['title','h1'])}}>
                             {{ content.sublime_r_pub_title }}
-                        </h3>
+                        </h1>
                         {% endif %}
                         {% if content.sublime_r_pub_description %}
-                        <p {{ regions_attributes.sublime_r_pub_description.addClass('text')}}>
+                        <div {{ region_attributes.sublime_r_pub_description.addClass('text')}}>
                             {{ content.sublime_r_pub_description }}
-                        </p>
+                        </div>
                         {% endif %}
                         <div class="more">
                             {% if content.sublime_r_pub_link %}
-                                {{ content.sublime_r_pub_link }}
+                                {% for item in content.sublime_r_pub_link|array_elements(region_attributes.sublime_r_pub_link.addClass('')) %}
+                                    {{ item }}
+                                {% endfor %}
+                                {#{ content.sublime_r_pub_link }#}
                             {% endif %}
                         </div>
                     </div>
