@@ -34,7 +34,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *
  */
 class HotModelsHotlockMenu extends FormatageModelsSection {
-
+  
   /**
    *
    * {@inheritdoc}
@@ -45,7 +45,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
     $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot_models_hotlock_menu.png");
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -53,7 +53,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
    *
    */
   public function build(array $regions) {
-
+    
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
@@ -62,7 +62,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     }
     return $build;
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -70,7 +70,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
   private function getMenus(array $hot_nav, array $build) {
     foreach ($hot_nav as $k => $m) {
       if (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] == 'system_menu_block') {
-          
+        
         $hot_nav[$k]['#attributes'] = [
           'class' => [
             'navbar-nav',
@@ -81,10 +81,11 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
         ];
         // set a new theme hoock () : refers to .theme.inc file
         $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
-        // Cette entrée n'existe toujours pas, on peut avoir uniquement le #cache et #markup.
+        // Cette entrée n'existe toujours pas, on peut avoir uniquement le
+        // #cache et #markup.
         
-        if(!empty($hot_nav[$k]['content']['#items']))
-        $this->formatListMenus($hot_nav[$k]['content']['#items']);
+        if (!empty($hot_nav[$k]['content']['#items']))
+          $this->formatListMenus($hot_nav[$k]['content']['#items']);
       }
       elseif (isset($m['#base_plugin_id']) && $m['#base_plugin_id'] == 'field_block') {
         $hot_nav[$k]['#attributes'] = [
@@ -102,19 +103,20 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
           $hot_nav[$k]['content']['#items'] = $hot_nav[$k]['content'][0]['#items'];
         }
       }
-      // Le rendu peut etre uniquement dans un cache. (peu propable sauf si le menu est vide).
+      // Le rendu peut etre uniquement dans un cache. (peu propable sauf si le
+      // menu est vide).
       elseif (!empty($m['#cache']['tags'])) {
-          foreach ($m['#cache']['tags'] as $value) {
-              if(str_contains($value, "config:system.menu.")){
-                  $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
-                  break;
-              }
+        foreach ($m['#cache']['tags'] as $value) {
+          if (str_contains($value, "config:system.menu.")) {
+            $hot_nav[$k]['content']['#theme'] = 'layoutmenu_hot_models_hotlock_menu';
+            break;
           }
+        }
       }
     }
     return $hot_nav;
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -131,7 +133,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
       }
     }
   }
-
+  
   /**
    * add a buildConfigurationForm for bloc_style for
    * add some class to the menu
@@ -140,12 +142,12 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     $form = parent::buildConfigurationForm($form, $form_state);
     $form['bloc_style'] = [
       '#type' => 'textfield',
-      '#title' => $this->t(' Bloc style '),
+      '#title' => $this->t(' Class for nav '),
       '#default_value' => $this->configuration['bloc_style']
     ];
     return $form;
   }
-
+  
   /**
    * add a submitConfigurationForm for bloc_style for
    * add some class to the menu
@@ -154,7 +156,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     parent::submitConfigurationForm($form, $form_state);
     $this->configuration['bloc_style'] = $form_state->getValue('bloc_style');
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -163,7 +165,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
   public function defaultConfiguration() {
     return parent::defaultConfiguration() + [
       'css' => '',
-      'bloc_style' => '',
+      'bloc_style' => 'navbar-light',
       'hmhm' => [
         'builder-form' => true,
         'info' => [
@@ -262,5 +264,5 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
       ]
     ];
   }
-
+  
 }

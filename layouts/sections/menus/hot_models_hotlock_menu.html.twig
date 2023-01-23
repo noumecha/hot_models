@@ -1,6 +1,6 @@
 {% if content %}
 <header {{ attributes.addClass('header-section-handler')}}>
-  <nav class="navbar navbar-expand-lg header-nav navbar-light first-nav">
+  <nav class="navbar navbar-expand-lg header-nav first-nav {{ settings.bloc_style }}">
     {% if content.menu_logo %}
     <div {{ region_attributes.menu_logo.addClass('navbar-brand')}} href="#">
       {{ content.menu_logo }}
