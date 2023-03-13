@@ -2,8 +2,8 @@
     {% if content.btn_block_bg.layout_builder_add_block %}
 		{{ content.btn_block_bg }}
 	{% endif %}
-<div class="container-fluid p-0">
-    <div {{ attributes.addClass(['row','text-btn-bloc']) }}>
+<div {{ attributes }}>
+    <div class="row text-btn-bloc">
         {% if content.btn_block_bg|layout_bg_img %}
 		    {% set attributes2=content.btn_block_bg|layout_bg_img %}
 	    {% endif %}
