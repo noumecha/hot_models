@@ -19,24 +19,25 @@
         </ul>
       {% endif %}
       <div class="header_search_1 d-flex ml-md-4 align-items-center py-3 pr-5">
-    	{% if logged_in == true %}
+    	{% if logged_in == true %}    	
     	<div class="btn-group">
         	<a href="#" type="button" class="mr-4 dropdown-toggle" title="{{'Profile information'|trans}}" data-toggle="dropdown" aria-expanded="false">
         		<i class="fas fa-user"></i>
         	</a>
-        	<div class="dropdown-menu">
+        	<div class="dropdown-menu dropdown-menu--user">
                 {{content.user_compact}}
           </div>
-    	</div>
-    	<a href="/user/logout" title="{{'Logout'|trans}}" data-toggle="tooltip" data-placement="bottom">
-    		<i class="fas fa-sign-out-alt"></i>
-    	</a>	
+    	</div>    		
     	{% else %}
-    	<a href="/user/login" title="{{'Login'|trans}}">
+    	<a href="/user/login" title="{{'Login'|trans}}" class="mr-4">
     		<i class="fas fa-sign-in-alt"></i>
     		{{ 'Login'|trans }}
     	</a>
     	{% endif %}
+    	<div class="mr-4 d-flex cart-small" title="{{'Logout'|trans}}" data-toggle="tooltip" data-placement="bottom">
+    		<small class="cart-small--count">0</small>
+    		<i class="fas fa-shopping-cart"></i>
+    	</div>
     </div>
 
       {% if content.menu_button %}

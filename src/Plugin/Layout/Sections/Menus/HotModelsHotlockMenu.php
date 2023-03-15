@@ -67,7 +67,7 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     if ($uid) {
       $user = \Drupal\user\Entity\User::load($uid);
       $viewEntity = \Drupal::entityTypeManager()->getViewBuilder('user');
-      $build['user_compact'] = $viewEntity->view($user, 'compact');
+      $build['user_compact'] = $viewEntity->view($user, 'hot_models_hotlock_menu__user');
     }
     return $build;
   }
