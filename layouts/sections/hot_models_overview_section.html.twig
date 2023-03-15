@@ -25,8 +25,10 @@
             </div>
             <div class="col-lg-7 services-elements "> 
             	{% if content.services_OS  %}
-                <div {{ region_attributes.services_OS.addClass('services_OS') }}>                    
-                        {{ content.services_OS|layout_value }}                    
+                <div class="layout-region services_OS row no-gutters">             
+                		{% for item in content.services_OS|array_elements(region_attributes.services_OS.addClass('')) %}
+                			{{ item }}
+                		{% endfor %}               
                 </div>
                 {% endif %}
             </div>
