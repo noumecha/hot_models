@@ -34,13 +34,16 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *       },
  *       "icon2" = {
  *          "label" = @Translation(" icon2 "),
+ *       },
+ *       "image" = {
+ *          "label" = @Translation(" Image "),
  *       }
  *  }
  * )
  *
  */
 class HotModelsSafetyHandler extends FormatageModelsTeasers {
-  
+
   /**
    *
    * {@inheritdoc}
@@ -51,7 +54,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
     $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot-models-hotlock-safetyhandler.png");
   }
-  
+
   /**
    *
    * {@inheritdoc}
@@ -64,7 +67,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-  
+
   /**
    *
    * {@inheritdoc}
@@ -73,6 +76,13 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
   public function defaultConfiguration() {
     return [
       'css' => '',
+      'derivate' => [
+        'value' => 'select',
+        'options' => [
+          'safety-handler--image-left' => 'image-left',
+          'safety-handler--image-right' => 'image-right',
+        ]
+      ],
       'css_descp' => 'justify-content-end',
       'region_css_call_to_action' => 'htl-btn htl-btn--sm htl-btn--bg-inv',
       'hmos' => [
@@ -124,6 +134,12 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
               'value' => " (800) 123-4567 "
             ]
           ],
+          'image' => [
+            'text_html' => [
+              'label' => "Image",
+              'value' => " (800) 123-4567 "
+            ]
+          ],
           'icon2' => [
             'text_html' => [
               'label' => "Svg",
@@ -136,5 +152,5 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
       ]
     ] + parent::defaultConfiguration();
   }
-  
+
 }
