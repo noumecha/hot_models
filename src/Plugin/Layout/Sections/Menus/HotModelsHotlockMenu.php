@@ -60,6 +60,15 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     if (is_array($build['menu_list'])) {
       $build['menu_list'] = $this->getMenus($build['menu_list'], $build);
     }
+    /**
+     * On ajoute le rendu compact de l'utilisateur s'il est connecté.
+     */
+    $uid = \Drupal::currentUser()->id();
+    if ($uid) {
+      $user = \Drupal\user\Entity\User::load($uid);
+      $viewEntity = \Drupal::entityTypeManager()->getViewBuilder('user');
+      $build['user_compact'] = $viewEntity->view($user, 'compact');
+    }
     return $build;
   }
   
@@ -143,7 +152,8 @@ class HotModelsHotlockMenu extends FormatageModelsSection {
     $form['bloc_style'] = [
       '#type' => 'textfield',
       '#title' => $this->t(' Class for nav '),
-      '#default_value' => $this->configuration['bloc_style']
+      '#default_value' => $this->configuration['bloc_style'],
+      '#description' => "Require la classe 'navbar-light' ou similaire afin d'afficher le burgger"
     ];
     return $form;
   }

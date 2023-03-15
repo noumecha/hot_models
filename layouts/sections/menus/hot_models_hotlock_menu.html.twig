@@ -18,6 +18,26 @@
               {{ content.menu_list|layout_value }}
         </ul>
       {% endif %}
+      <div class="header_search_1 d-flex ml-md-4 align-items-center py-3 pr-5">
+    	{% if logged_in == true %}
+    	<div class="btn-group">
+        	<a href="#" type="button" class="mr-4 dropdown-toggle" title="{{'Profile information'|trans}}" data-toggle="dropdown" aria-expanded="false">
+        		<i class="fas fa-user"></i>
+        	</a>
+        	<div class="dropdown-menu">
+                {{content.user_compact}}
+          </div>
+    	</div>
+    	<a href="/user/logout" title="{{'Logout'|trans}}" data-toggle="tooltip" data-placement="bottom">
+    		<i class="fas fa-sign-out-alt"></i>
+    	</a>	
+    	{% else %}
+    	<a href="/user/login" title="{{'Login'|trans}}">
+    		<i class="fas fa-sign-in-alt"></i>
+    		{{ 'Login'|trans }}
+    	</a>
+    	{% endif %}
+    </div>
 
       {% if content.menu_button %}
       <div {{ region_attributes.menu_button.addClass(['htl-btn','htl-btn--bg'])}}>

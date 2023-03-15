@@ -5,6 +5,7 @@ namespace Drupal\hot_models\Plugin\Layout\Sections;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Hot Models Overview Section
@@ -53,11 +54,29 @@ class HotModelsHotlockHero extends FormatageModelsSection {
    *
    */
   public function build(array $regions) {
-    
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
+  }
+  
+  public function buildConfigurationForm($form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['css_descp'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('css_descp'),
+      '#default_value' => $this->configuration['css_descp']
+    ];
+    return $form;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->configuration['css_descp'] = $form_state->getValue('css_descp');
   }
   
   /**
@@ -68,8 +87,10 @@ class HotModelsHotlockHero extends FormatageModelsSection {
   public function defaultConfiguration() {
     return [
       'css' => '',
-      'css_descp' => 'justify-content-end',
+      'css_descp' => 'justify-content-end width-tablet ml-auto mr-md-3 align-items-center justify-content-center',
       'region_css_call_to_action' => 'htl-btn htl-btn--big htl-btn--fade',
+      'region_css_title' => 'wbu-titre-suppra',
+      'region_tag_title' => 'h2',
       'hmos' => [
         'builder-form' => true,
         'info' => [

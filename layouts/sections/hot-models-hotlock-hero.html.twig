@@ -6,7 +6,7 @@
 			</div>
 		{% endif %}
 		<div class="hth-content ">
-			<div class="container d-flex justify-content-end {{settings.css_descp}}">
+			<div class="d-flex hth-content__container {{settings.css_descp}}">
 				<div class="description">
 					{% if content.sub_title %}
 						<h4 {{ region_attributes.sub_title.addClass('title')}}>
@@ -14,9 +14,7 @@
 						</h4>
 					{% endif %}
 					{% if content.title %}
-						<h1 {{ region_attributes.title.addClass('sub-title')}}>
-							{{ content.title|layout_value }}
-						</h1>
+						<{{settings.region_tag_title}} {{ region_attributes.title.addClass('sub-title')}}> {{ content.title|layout_value }} </{{settings.region_tag_title}}>
 					{% endif %}
 					{% if content.call_to_action %}
 						<div {{ region_attributes.call_to_action.addClass('call_to_action')}}>
