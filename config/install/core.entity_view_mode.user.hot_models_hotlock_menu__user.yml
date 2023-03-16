@@ -1,0 +1,13 @@
+uuid: 6fa85a79-970e-4d1c-9b29-9a3ab6eab2e4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+  enforced:
+    module:
+      - hot_models
+id: user.hot_models_hotlock_menu__user
+label: 'User model flat (hot_models module)'
+targetEntityType: user
+cache: true

@@ -1,0 +1,23 @@
+{% if content %}
+	<div {{attributes.addClass('hot_models-user-compact-stripe')}}>
+		<div class="user-info">
+			{% if content.user_name %}
+			<div {{region_attributes.user_name.addClass('user_name')}}>
+				{{content.user_name}}
+			</div>
+			{% endif %}
+			{% if content.user_roles %}
+			<small class="user_roles layout-region">
+				{% for item in content.user_roles|array_elements(region_attributes.user_roles.addClass('role')) %}
+	                {{ item }}
+                {% endfor %} 
+			</small>
+			{% endif %}
+		</div>
+    	{% if content.user_mores %}
+    		<div {{region_attributes.user_mores.addClass('user_mores')}}>
+    			{{content.user_mores}}
+    		</div>
+    	{% endif %}
+	</div>	
+{% endif %}
