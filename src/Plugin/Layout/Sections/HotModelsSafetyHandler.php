@@ -81,6 +81,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
         'options' => [
           'safety-handler--image-left' => 'image-left',
           'safety-handler--image-right' => 'image-right',
+          'safety-handler--reverse' => 'reverse',
         ]
       ],
       'css_descp' => 'justify-content-end',

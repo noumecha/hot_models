@@ -1,24 +1,24 @@
 {% if content %}
 	<section {{ attributes.addClass('safety-handler') }}>
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row reverse-class">
 				<div class="col-lg-6 col-md-6 col-sm-12 security-service">
 					{% if content.image %}
-						<div {{region_attributes.image.addClass('image-block')}}>
-							{{content.image}}
-						</div>
-					{% endif %}
-					{% if content.icon %}
-						<div {{region_attributes.icon.addClass('icon')}}>
-							{{content.icon}}
-						</div>
+						{% for item in content.image|array_elements(region_attributes.image.addClass('image-block')) %}
+							{{ item }}
+						{% endfor %}
 					{% endif %}
 					<div class="handler">
+						{% if content.icon %}
+							<div {{region_attributes.icon.addClass('icon')}}>
+								{{content.icon}}
+							</div>
+						{% endif %}
 						<div class="to-end">
 							{% if content.title %}
-								<h3 {{region_attributes.title.addClass(['head-title','title'])}}>
+								<h1 {{region_attributes.title.addClass(['head-title','title'])}}>
 									{{content.title}}
-								</h3>
+								</h1>
 							{% endif %}
 							{% if content.description %}
 								<div {{region_attributes.description.addClass(['all-services','description'])}}>
@@ -30,14 +30,17 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 call-info">
 					{% if content.image %}
-						<div {{region_attributes.image.addClass('image-block')}}>
+						{% for item in content.image|array_elements(region_attributes.image.addClass('image-block')) %}
+							{{ item }}
+						{% endfor %}
+						{#<div {{region_attributes.image.addClass('image-block')}}>
 							{{content.image}}
-						</div>
+						</div>#}
 					{% endif %}
 					{% if content.title2 %}
-						<h3 {{region_attributes.title2.addClass(['head-title','title2'])}}>
+						<h1 {{region_attributes.title2.addClass(['head-title','title2'])}}>
 							{{content.title2}}
-						</h3>
+						</h1>
 					{% endif %}
 					{% if content.phone %}
 						<div {{region_attributes.phone.addClass(['phone-number','phone'])}}>
