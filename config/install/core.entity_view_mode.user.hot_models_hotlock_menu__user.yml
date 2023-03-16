@@ -4,7 +4,9 @@ status: true
 dependencies:
   module:
     - user
-    - hot_models
+  enforced:
+    module:
+      - hot_models
 id: user.hot_models_hotlock_menu__user
 label: 'User model flat (hot_models module)'
 targetEntityType: user

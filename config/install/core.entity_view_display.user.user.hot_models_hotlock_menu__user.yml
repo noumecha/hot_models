@@ -11,7 +11,9 @@ dependencies:
     - image
     - layout_builder
     - user
-    - hot_models
+  enforced:
+    module:
+      - hot_models
 third_party_settings:
   layout_builder:
     enabled: true
