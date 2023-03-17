@@ -7,9 +7,9 @@ use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
- * 
- * Team Section Layout 
- * 
+ *
+ * Team Section Layout
+ *
  * @Layout(
  *  id = "hot_models_team_section",
  *  label = @Translation("hot_models_team_section"),
@@ -31,10 +31,9 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *  }
  * )
  */
-class HotModelsHotlockTeamSection extends FormatageModelsSection 
-{
-
-   /**
+class HotModelsHotlockTeamSection extends FormatageModelsSection {
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
@@ -56,51 +55,50 @@ class HotModelsHotlockTeamSection extends FormatageModelsSection
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
-    
     return $build;
   }
-
+  
   /**
-   * 
+   *
    * {@inheritdoc}
-   * 
+   *
    */
-  public function defaultConfiguration() 
-  {
-      return parent::defaultConfiguration() + [
-        'css' => '',
-        'hmts' => [
-            'builder-form' => true,
-            'info' => [
-                'title' => 'Contenu',
-                'loader' => 'static'
-            ],
-            'fields' => [
-                'team_section_title' => [
-                    'text_html' => [
-                        'label' => 'Titre',
-                        'value' => '<p>Our Team</p>'
-                    ]
-                ],
-                'team_section_content' => [
-                    'text_html' => [
-                        'label' => 'Container',
-                        'value' => ''
-                    ]
-                ],
-                'team_section_btn' => [
-                    'url' => [
-                        'label' => 'Bouton',
-                        'value' => [
-                            "link" => "#",
-                            "text" => "more about team",
-                            "class" => "htl-btn--bg-inv htl-btn"
-                        ]
-                    ]
-                ]
+  public function defaultConfiguration() {
+    return [
+      'css' => '',
+      'region_css_team_section_title' => 'text-center',
+      'hmts' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'team_section_title' => [
+            'text_html' => [
+              'label' => 'Titre',
+              'value' => '<p>Our Team</p>'
             ]
+          ],
+          'team_section_content' => [
+            'text_html' => [
+              'label' => 'Container',
+              'value' => ''
+            ]
+          ],
+          'team_section_btn' => [
+            'url' => [
+              'label' => 'Bouton',
+              'value' => [
+                "link" => "#",
+                "text" => "more about team",
+                "class" => "htl-btn--bg-inv htl-btn"
+              ]
+            ]
+          ]
         ]
-      ];
+      ]
+    ] + parent::defaultConfiguration();
   }
-
+  
 }

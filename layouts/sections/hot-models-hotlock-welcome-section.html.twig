@@ -4,9 +4,9 @@
 			<div class="welcome-elements row">
 				<div class="col-md-5 text-element">
 					{% if content.sub_title %}
-						<h4 {{ region_attributes.sub_title.addClass(['title', 'section-title'])}}>
-							{{ content.sub_title|layout_value }}
-						</h4>
+						<div {{ region_attributes.sub_title.addClass(['title', 'sub_title'])}}>
+							{{ content.sub_title }}
+						</div>
 					{% endif %}
 					{% if content.title %}
 						<h2 {{ region_attributes.title.addClass(['sub-title','welcome-words'])}}>

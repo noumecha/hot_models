@@ -2,7 +2,7 @@
 <section {{ attributes.addClass('team-section-handler')}}>
     <div class="container">
         {% if content.team_section_title %}
-        <div {{ region_attributes.team_section_title.addClass(['title','text-center']) }}>
+        <div {{ region_attributes.team_section_title.addClass(['title']) }}>
             {{ content.team_section_title|layout_value }}
         </div>
         {% endif %}
