@@ -76,8 +76,11 @@ class HotModelsSafetyHandler extends FormatageModelsSection {
   public function defaultConfiguration() {
     return [
       'css' => '',
+      'region_css_title' => '',
+      'region_css_title2' => '',
+      'region_css_phone' => 'h1',
       'derivate' => [
-        'value' => 'select',
+        'value' => 'safety-handler--icon-partiel-hiden',
         'options' => [
           'safety-handler--image-left' => 'image-left',
           'safety-handler--image-right' => 'image-right',
