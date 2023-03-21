@@ -29,7 +29,8 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 call-info">
-					{% if content.image %}
+					<div class="handler">
+						{% if content.image %}
 						{% for item in content.image|array_elements(region_attributes.image.addClass('image-block')) %}
 							{{ item }}
 						{% endfor %}
@@ -52,6 +53,7 @@
 							{{content.icon2}}
 						</div>
 					{% endif %}
+					</div>
 				</div>
 			</div>
 		</div>

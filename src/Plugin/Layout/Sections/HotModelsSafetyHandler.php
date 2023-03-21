@@ -4,7 +4,7 @@ namespace Drupal\hot_models\Plugin\Layout\Sections;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
-use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
+use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
  * Hot Models Overview Section
@@ -42,8 +42,8 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  * )
  *
  */
-class HotModelsSafetyHandler extends FormatageModelsTeasers {
-
+class HotModelsSafetyHandler extends FormatageModelsSection {
+  
   /**
    *
    * {@inheritdoc}
@@ -54,7 +54,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
     $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/sections/hot-models-hotlock-safetyhandler.png");
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -67,7 +67,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-
+  
   /**
    *
    * {@inheritdoc}
@@ -82,6 +82,7 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
           'safety-handler--image-left' => 'image-left',
           'safety-handler--image-right' => 'image-right',
           'safety-handler--reverse' => 'reverse',
+          'safety-handler--icon-partiel-hiden' => 'icone partielement cache exterieur'
         ]
       ],
       'css_descp' => 'justify-content-end',
@@ -153,5 +154,5 @@ class HotModelsSafetyHandler extends FormatageModelsTeasers {
       ]
     ] + parent::defaultConfiguration();
   }
-
+  
 }
