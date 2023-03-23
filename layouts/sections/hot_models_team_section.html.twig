@@ -7,13 +7,15 @@
         </div>
         {% endif %}
         {% if content.team_section_content %}
-        <div {{ region_attributes.team_section_content.addClass(['all-team-lutin','row','justify-content-between']) }}>
-            {{ content.team_section_content|layout_value }}
+        <div class="all-team-lutin row justify-content-between">
+            {% for item in content.team_section_content|array_elements(region_attributes.team_section_content) %}
+            	{{ item }}
+            {% endfor %}
         </div>
         {% endif %}
         <div class="d-flex justify-content-center">
             {% if content.team_section_btn %}
-                {% for item in content.team_section_btn|array_elements(region_attributes.team_section_btn.addClass()) %}
+                {% for item in content.team_section_btn|array_elements(region_attributes.team_section_btn) %}
                     {{ item }}
                 {% endfor %}
             {#<div {{ region_attributes.team_section_btn.addClass(['htl-btn','htl-btn--bg-inv '])}}>
