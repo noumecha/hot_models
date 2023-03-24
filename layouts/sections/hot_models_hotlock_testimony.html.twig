@@ -4,17 +4,19 @@
         <div {{ attributes.addClass(['services-testimony','row'])}}>
             <div class="col-lg-6 p-0 done d-flex justify-content-around">
                 {% if content.testimony_counter_contener %}
-                <div {{ region_attributes.testimony_counter_contener.addClass(['all-single-services','row'])}}>
-                    {{ content.testimony_counter_contener|layout_value }}
+                <div class="layout-region testimony_counter_contener all-single-services row">
+                    {% for item in content.testimony_counter_contener|array_elements(region_attributes.testimony_counter_contener) %}
+            			{{ item }}
+            		{% endfor %}
                 </div>
                 {% endif %}
             </div>
             <div class="col-lg-6 p-0 testimony-handler d-flex ">
                 <div class="testimony">
                     {% if content.testimony_title %}
-                    <h1 {{ region_attributes.testimony_title.addClass('title') }}>
+                    <h2 {{ region_attributes.testimony_title.addClass('title') }}>
                         {{ content.testimony_title|layout_value }}
-                    </h1>
+                    </h2>
                     {% endif %}
                     {% if content.testimony_text_contener %}
                     <div {{ region_attributes.testimony_text_contener.addClass('slider-container') }}>
