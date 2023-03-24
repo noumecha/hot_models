@@ -1,4 +1,5 @@
 {% if content %}
+
 <div {{ attributes.addClass(['services','col-sm-4']) }}>
     {% if content.teaser_count_icon %}
     <div {{ region_attributes.teaser_count_icon.addClass('icon') }}>
@@ -6,7 +7,12 @@
     </div>
     {% endif %}
     {% if content.teaser_count_number %}
-        {{ content.teaser_count_number|layout_value }}
+    	{% if content.teaser_count_number.layout_builder_add_block %}
+    		{{content.teaser_count_number}}
+    	{% endif %}
+    	{% set number %}{{content.teaser_count_number|layout_value}}{% endset %}
+    	{% set attributes__teaser_count_number = region_attributes.teaser_count_number.setAttribute('data-target', number|trim|striptags) %}
+    	<div {{ attributes__teaser_count_number.addClass('number') }}></div>
     {% endif %}
     {% if content.teaser_count_title %}
     <div {{ region_attributes.teaser_count_title.addClass('title')}}>

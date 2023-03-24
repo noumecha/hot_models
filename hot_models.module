@@ -1,6 +1,7 @@
 <?php
 
 /**
+ *
  * @file
  * Primary module hooks for hot_models module.
  *
@@ -19,6 +20,6 @@ function hot_models_theme() {
       'template_preprocess_layoutmenu_hot_models_hotlock_menu'
     ],
     'file' => 'hot_models.theme.inc'
-  ];  
+  ];
   return $hooks;
 }
