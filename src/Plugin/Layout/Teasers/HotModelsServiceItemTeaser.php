@@ -8,7 +8,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
 
 /**
  * Teaser for overview section
- * 
+ *
  * @Layout(
  *  id = "hot_models_service_items_teaser",
  *  label = @Translation("hot_models service items teaser"),
@@ -18,18 +18,17 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *  library = "hot_models/hot_models_service_items_teaser",
  *  regions = {
  *      "title" = {
- *          "label" = @Translation("title"),     
+ *          "label" = @Translation("title"),
  *      },
  *      "icone" = {
- *          "label" = @Translation("icone"),     
+ *          "label" = @Translation("icone"),
  *      }
  *  }
  * )
  */
-
-class HotModelsServiceItemTeaser extends FormatageModelsTeasers 
-{
-    /**
+class HotModelsServiceItemTeaser extends FormatageModelsTeasers {
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
@@ -39,8 +38,8 @@ class HotModelsServiceItemTeaser extends FormatageModelsTeasers
     parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
     $this->pluginDefinition->set('icon', drupal_get_path('module', 'hot_models') . "/icones/teasers/serviceItems.png");
   }
-
-   /**
+  
+  /**
    *
    * {@inheritdoc}
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels:build()
@@ -52,26 +51,28 @@ class HotModelsServiceItemTeaser extends FormatageModelsTeasers
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
-
+  
   /**
-   * 
+   *
    * {@inheritdoc}
-   * 
+   *
    */
   public function defaultConfiguration() {
-    return parent::defaultConfiguration() + [
-        'css' => '',
-        'hovt' => [
-            'builder-form'  => true,
-            'info' => [
-                'title' => 'Contenu',
-                'loader' => 'static'
-            ],
-            'fields' => [
-                'icone' => [
-                  'text_html' => [
-                      'label' => 'Icone',
-                      'value' => ' 
+    return [
+      'css' => '',
+      'region_css_icone' => '',
+      'region_css_title' => '',
+      'hovt' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'icone' => [
+            'text_html' => [
+              'label' => 'Icone',
+              'value' => ' 
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="80"
                                                  height="81.67" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 49">
                                 <g fill="none" stroke="currentColor" stroke-width="4">
@@ -82,17 +83,17 @@ class HotModelsServiceItemTeaser extends FormatageModelsTeasers
                                 </g>
                             </svg>
                         '
-                    ]
-                ],
-                'title' => [
-                    'text_html' => [
-                        'label' => 'Title ',
-                        'value' => 'video surveillance'
-                    ]
-                ]
             ]
+          ],
+          'title' => [
+            'text_html' => [
+              'label' => 'Title ',
+              'value' => 'video surveillance'
+            ]
+          ]
         ]
-    ];
+      ]
+    ] + parent::defaultConfiguration();
   }
-
+  
 }

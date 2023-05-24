@@ -1,14 +1,14 @@
 {% if content %}
 <div {{ attributes.addClass('collection-teaser-handler')}}>
-        <div class="container-fluid">
-        <div class="row">
+        <div  {% if settings.config_section %} class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}" {% else %} class="container-fluid" {% endif %}>
+        <div class="row no-gutters">
             <div class="col-lg-6 ">
                 <div class="col-lg-16">
                     {% if content.hongo_collection_left_top %}
                         {{ content.hongo_collection_left_top }}
                     {% endif %}
                 </div>
-                <div class="row col-childs">
+                <div class="row no-gutters">
                     <div class="col-lg-6">
                         {% if content.hongo_collection_left_bottom %}
                             {{ content.hongo_collection_left_bottom }}
@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-6">
                 {% if content.hongo_collection_right_full %}
-                    {{ content.hongo_collection_right_full }}
+                    {{ content.hongo_collection_right_full|layout_value }}
                 {% endif %}
             </div>
         </div>

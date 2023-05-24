@@ -2,45 +2,44 @@
     {% if content.left_teaser_img.layout_builder_add_block %}
         {{ content.left_teaser_img }}
     {% endif %}
-    <div {{ attributes.addClass('box-y') }}>
-        {% if content.left_teaser_img|layout_bg_img %}
-            {% set attributes2=content.left_teaser_img|layout_bg_img %}
-        {% endif %}
-        <div {{ attributes2.addClass('phone_img') }}>                  
-        </div>
+    {% if content.left_teaser_sticker.layout_builder_add_block %}
+                {{ content.left_teaser_sticker }}
+    {% endif %}
+    <div {{ attributes.addClass('hot_models_box-y') }}>        
         <div class="inner-square ">
             <div class="content">
                 {% if content.left_teaser_title %}
-                <h2 {{ region_attributes.left_teaser_title.addClass('title')}}>
+                <h3 {{ region_attributes.left_teaser_title.addClass('title')}}>
                     {{ content.left_teaser_title }}
-                </h2>
+                </h3>
                 {% endif %}
-                <div class="see-more">
                     {% if content.left_teaser_link %}
-                        {{ content.left_teaser_link }}
+                        {% for item in content.left_teaser_link|array_elements(region_attributes.left_teaser_link.addClass('left_teaser_link')) %}
+                    		{{ item }}
+                    	{% endfor %}
                     {% endif %}
-                </div>
-            </div>
-                            
-            <div class="sticker-handler">
-                {% if content.left_teaser_sticker %}
-                <div {{ region_attributes.left_teaser_sticker.addClass('sticker')}} >
-                    {{ content.left_teaser_sticker }}
-                </div>
-                {% endif %}
-                <div class="discount">
+            </div>            
+            {% set left_teaser_sticker=region_attributes.left_teaser_sticker %}
+             {% if content.left_teaser_sticker|layout_bg_img %}
+                {% set left_teaser_sticker=region_attributes.left_teaser_sticker.merge(content.left_teaser_sticker|layout_bg_img) %}
+            {% endif %}
+            <div {{ left_teaser_sticker.addClass(['sticker-handler ml-auto text-align-right justify-content-end d-flex']) }}>                
+                <div class="discount d-flex flex-column align-items-end">                
                     {% if content.left_teaser_price %}
-                    <div {{ region_attributes.left_teaser_price.addClass('discount_value')}}>
-                        {{ content.left_teaser_price }}<span class="up">%</span>
+                    <div {{ region_attributes.left_teaser_price.addClass(['discount_value','d-flex'])}}>
+                        {{ content.left_teaser_price|layout_value }}<span class="up">%</span>
                     </div>
                     {% endif %}
                     {% if content.left_teaser_type %}
-                    <div {{ region_attributes.left_teaser_type.addClass('')}}>
-                        {{ content.left_teaser_type }}
+                    <div {{ region_attributes.left_teaser_type.addClass('left_teaser_type')}}>
+                        {{ content.left_teaser_type|layout_value }}
                     </div>
                     {% endif %}
                 </div>
             </div>
         </div>
+        {% if content.left_teaser_img %}
+             <div {{ region_attributes.left_teaser_img.addClass('left_teaser_img') }}> {{ content.left_teaser_img|layout_value }} </div>
+        {% endif %}  
     </div>
 {% endif %}

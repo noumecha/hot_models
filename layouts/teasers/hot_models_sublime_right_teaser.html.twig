@@ -3,9 +3,9 @@
         {{ content.right_teaser_img }}
     {% endif %}
     {% if content.right_teaser_img|layout_bg_img %}
-        {% set attributes=content.right_teaser_img|layout_bg_img %}
+        {% set attributes = attributes.merge(content.right_teaser_img|layout_bg_img) %}
     {% endif %}
-    <div {{ attributes.addClass('box-x') }}>
+    <div {{ attributes.addClass('hot_models_box-x') }}>
         <div class="text-wrapper">
             <div class="text-shadow">
                 {% if content.right_teaser_title %}
@@ -15,12 +15,14 @@
                 {% endif %}
                 {% if content.right_teaser_description %}
                 <div {{ region_attributes.right_teaser_description.addClass('text_avds')}}>
-                    {{ content.right_teaser_description }}
+                    {{ content.right_teaser_description|layout_value }}
                 </div>
                 {% endif %}
                 <div class="avds_link">
                     {% if content.right_teaser_link %}
-                        {{ content.right_teaser_link }}
+                        {% for item in content.right_teaser_link|array_elements(region_attributes.right_teaser_link.addClass('right_teaser_link')) %}
+                    		{{ item }}
+                    	{% endfor %}
                     {% endif %}
                 </div>
             </div>

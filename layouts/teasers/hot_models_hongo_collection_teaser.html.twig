@@ -1,5 +1,5 @@
 {% if content %}
-<div {{ attributes.addClass('element') }}>
+<div {{ attributes.addClass('hot_models_hongo_item') }}>
     <div class="text-wrapper">
         <div class="content">
             <div class="desc">
@@ -10,7 +10,9 @@
                 {% endif %}
                 <div class="shop">
                     {% if content.collection_link %}
-                        {{ content.collection_link }}
+                        {% for item in content.collection_link|array_elements(region_attributes.collection_link.addClass('collection_link')) %}
+                    		{{ item }}
+                    	{% endfor %}
                     {% endif %}
                 </div>
             </div>
