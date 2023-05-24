@@ -6,7 +6,8 @@
     {% set attributes=attributes.merge(content.security_bg|layout_bg_img) %}
 {% endif %}
 <section {{ attributes.addClass('security-info-handler')}}>
-        <div class="safety-text text-center" >
+	<div class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}">
+		<div class="safety-text text-center" >
             {% if content.security_icon %}
             <span {{region_attributes.security_icon.addClass('icon')}}>
                 {{ content.security_icon|layout_value }}
@@ -31,5 +32,6 @@
                 </div>#}
             {% endif %}
         </div>
+	</div>
 </section>
 {% endif %}

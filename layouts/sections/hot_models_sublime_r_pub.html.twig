@@ -6,35 +6,35 @@
 		{% set attributes = attributes.merge(content.sublime_r_pub_bg|layout_bg_img) %}
 	{% endif %}
 <div {{ attributes.addClass('pub-sublime-section') }}>
-	<div class="container">
-    <div class="row">
-        <div class="pub-teaser-handler col-lg-12">
-            <div class="pub">
-                <div class="banner">
-                    <div class="content-block">
-                        {% if content.sublime_r_pub_title %}
-                        <h2 {{ region_attributes.sublime_r_pub_title.addClass(['title'])}}>
-                            {{ content.sublime_r_pub_title }}
-                        </h2>
-                        {% endif %}
-                        {% if content.sublime_r_pub_description %}
-                        <div {{ region_attributes.sublime_r_pub_description.addClass('text')}}>
-                            {{ content.sublime_r_pub_description }}
-                        </div>
-                        {% endif %}
-                        <div class="more">
-                            {% if content.sublime_r_pub_link %}
-                                {% for item in content.sublime_r_pub_link|array_elements(region_attributes.sublime_r_pub_link.addClass('')) %}
-                                    {{ item }}
-                                {% endfor %}
-                                {#{ content.sublime_r_pub_link }#}
+	<div class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}">
+        <div class="row">
+            <div class="pub-teaser-handler col-lg-12">
+                <div class="pub">
+                    <div class="banner">
+                        <div class="content-block">
+                            {% if content.sublime_r_pub_title %}
+                            <h2 {{ region_attributes.sublime_r_pub_title.addClass(['title'])}}>
+                                {{ content.sublime_r_pub_title }}
+                            </h2>
                             {% endif %}
+                            {% if content.sublime_r_pub_description %}
+                            <div {{ region_attributes.sublime_r_pub_description.addClass('text')}}>
+                                {{ content.sublime_r_pub_description }}
+                            </div>
+                            {% endif %}
+                            <div class="more">
+                                {% if content.sublime_r_pub_link %}
+                                    {% for item in content.sublime_r_pub_link|array_elements(region_attributes.sublime_r_pub_link.addClass('')) %}
+                                        {{ item }}
+                                    {% endfor %}
+                                    {#{ content.sublime_r_pub_link }#}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 {% endif %}
